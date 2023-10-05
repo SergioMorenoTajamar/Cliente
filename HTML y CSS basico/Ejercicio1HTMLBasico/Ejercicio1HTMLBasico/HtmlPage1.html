@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            font-family: Arial, sans-serif;
+            margin: 10px;
+        }
+
+        body {
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        label {
+            
+            margin-top: 10px;
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="file"],
+        textarea,
+        input[type="range"] {
+            width: 100%;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        select {
+            height: 30px;
+        }
+
+        input[type="radio"] {
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+
+        input[type="submit"],
+        input[type="reset"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            input[type="submit"]:hover,
+            input[type="reset"]:hover {
+                background-color: #555;
+            }
+    </style>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Formulario de registro</h1>
+    <label for="txtNombreUsuario">Nombre de Usuario:</label>
+    <input type="text" name="txtNombreUsuario" id="txtNombreUsuario" placeholder="Ingrese Su Nombre" /><br />
+    <label for="txtCorreo">Correo:</label>
+    <input type="text" name="txtCorreo" id="txtCorreo" placeholder="Ingrese Su Correo" /><br />
+    <label for="txtContrasena">Contraseña:</label>
+    <input type="text" name="txtContrasena" id="txtContrasena" placeholder="Ingrese Su Contraseña" /><br />
+    <label for="selectSexo">Sexo:</label>
+    <select name="selectSexo" id="selectSexo">
+        <option>No especificar</option>
+        <option>Hombre</option>
+        <option>Mujer</option>
+        <option>Otro</option>
+    </select><br />
+    <label for="txtPais">Pais:</label>
+    <input type="text" name="txtPais" id="txtPais" placeholder="Ingrese Su Pais" /><br />
+    <label>Subir tu foto:</label>
+    <input type="file" placeholder="Seleccionar archivo" /><br />
+    <label>Cuentanos más sobre ti</label>
+    <textarea></textarea>
+    <label for="cuantoSabes">Cuanto saber de HTML5?</label>
+    <input type="range" name="cuantoSabes" id="cuantoSabes" min="0" max="10" value="" /><br />
+    <label>Desea suscribirse a nuestro boletín?:</label>
+    <input type="radio" name="siOno" value="si" id="rbtnSi"> <label for="rbtnSi">Si</label>
+    <input type="radio" name="siOno" value="no" id="rbtnNo"> <label for="rbtnNo">No</label><br />
+    <label for="cuantosDias">Cada cuántos días desea recibirlo?</label>
+    <select id="cuantosDias" name="cuantosDias">
+        <option value="opcion1">1 día</option>
+        <option value="opcion2">2 días</option>
+        <option value="opcion3">3 días</option>
+    </select><br><br>
+    <input type="radio" name="terminos" value="aceptoterminos" id="aceptoterminos"> <label for="aceptoterminos">Acepto Términos y Condiciones</label><br />
+    <input type="submit" value="Enviar">
+    <input type="reset" value="Cancelar">
+</body>
+</html>

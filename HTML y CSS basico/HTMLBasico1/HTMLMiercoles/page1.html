@@ -1,0 +1,196 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #F0F0F0;
+            margin: 0;
+            padding: 0;
+        }
+
+        p {
+            font-size: 24px;
+            color: #333;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        ul, ol {
+            padding-left: 20px;
+        }
+
+        li {
+            font-weight: bold;
+            margin: 5px 0;
+        }
+
+        dt {
+            font-style: italic;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        dd {
+            margin-left: 20px;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        th, td {
+            border: 1px solid #ccc;
+            padding: 8px;
+            text-align: center;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        ul.navbar {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #333;
+            overflow: hidden;
+        }
+
+        ul.navbar li {
+            float: left;
+        }
+
+        ul.navbar li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.navbar li a:hover {
+            background-color: #555;
+        }
+
+        /* Estilos para el formulario */
+        form {
+            margin: 20px auto;
+            max-width: 400px;
+            padding: 20px;
+            background-color: #fff;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        label {
+            font-weight: bold;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        textarea {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+        }
+
+        input[type="submit"] {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #555;
+        }
+        select {
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            width: 100%;
+        }
+
+        option {
+            padding: 5px;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title>Mi Página Decorada</title>
+</head>
+<body>
+    <p>Hola mundo</p>
+    <ul>
+        <li>Esta</li>
+        <li>lista</li>
+        <li>está</li>
+        <li>desordenada</li>
+    </ul>
+    <ol>
+        <li>Esta</li>
+        <li>lista</li>
+        <li>está</li>
+        <li>ordenada</li>
+    </ol>
+    <dl>
+        <dt>Esto es un</dt>
+        <dd>Diccionario</dd>
+
+        <dt>Esto es el término</dt>
+        <dd>Esto es la descripción</dd>
+    </dl>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Esto es</th>
+                <th>la cabecera</th>
+                <th>de la tabla</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Esto es</td>
+                <td>la primera</td>
+                <td>línea</td>
+            </tr>
+            <tr>
+                <td>Esto es</td>
+                <td>la segunda</td>
+                <td>línea</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <ul class="navbar">
+        <li><a href="default.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="clients.html">Clients</a></li>
+    </ul>
+
+    <form action="default.html" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" required><br><br>
+
+        <label for="equipo">Equipo:</label><br>
+        <select>
+            <option>opcion 1</option>
+            <option>opcion 2</option>
+            <option>opcion 3</option>
+        </select><br><br>
+
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
