@@ -1,4 +1,3 @@
 ﻿function decirHola() {
-    alert('Hola mundo')
-
+    alert('Hola mundo');
 }
