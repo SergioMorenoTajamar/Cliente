@@ -87,6 +87,29 @@
         var diaSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
 
         document.write(", " + diaSemana[fechaActual.getDay()] + ", " + fechaActual.getDate() + " de " + meses[fechaActual.getMonth()] + " de " + fechaActual.getFullYear());
+
+//STRINGS
+    //declarar strings
+        let nombre = "Andres";
+        let apellido = new String("Perez");
+
+    //propiedades
+        var lomgitud = nombre.lenght;
+
+    //Metodos
+        //Encontrar Subcadenas
+        var str = "Hola Mundo, Hello world";
+        var n = str.indexOf("Hello");//esta opcion separa el hello
+        var m = str.slice(11, 16);//esta tambien separa el hello pero dandole manualmente la posicion de los caracteres
+
+        //Split
+        var string1 = "pepe, Jose, Pablo, Juan";
+        var arrayA = string1.split(", ");
+        document.write(arrayA);
+
+//EJERCICIOS
+        //Ejercicio 2.15
+
     </script>
 </head>
 <body>
