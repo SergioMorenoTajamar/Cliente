@@ -1,0 +1,57 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+        document.write("<h1>Basicos de JS (bucles condicionales y prompt)</h1>");
+//bucle de todos los numeros del 0 al 100
+        document.write("bucle de todos los numeros del 0 al 100");
+        for (i = 0; i <= 100; i++) { 
+        document.write(i);
+        document.write("<br/>");
+            i++;
+        }
+
+ //separacion
+        document.write("<br/>");
+        document.write("---------------------------------------------------------------------");
+        document.write("<br/>");
+
+//suma de todos los numeros del 0 al 20
+        document.write("suma de todos los numeros del 0 al 20");
+        var suma = 0;
+        for (i = 0; i <= 20; i++) {
+            suma += i;
+            document.write(suma);
+            document.write("<br/>");
+        }
+
+ //separacion
+        document.write("<br/>");
+        document.write("---------------------------------------------------------------------");
+        document.write("<br/>");
+
+//verificacion de si un numero introducido en un prompt es par o impar
+        document.write("verificacion de si un numero introducido en un prompt es par o impar");
+        document.write("<br/>");
+        function parImpar(entero) {
+            if (entero % 2 == 0) {
+                return 'par';
+            }
+            else {
+                return 'impar';
+            }
+        }
+        var numero = prompt('introduce un numero entero');
+        document.write('el numero introducido es ' + parImpar(numero));
+
+//separacion
+        document.write("<br/>");
+        document.write("---------------------------------------------------------------------");
+        document.write("<br/>");
+    </script>
+</head>
+<body>
+</body>
+</html>
