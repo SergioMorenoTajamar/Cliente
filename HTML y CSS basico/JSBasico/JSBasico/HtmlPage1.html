@@ -1,13 +1,50 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        img {
+            border: 2px solid #333;
+            border-radius: 10px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        hr {
+            border: 1px solid #333;
+            margin: 20px 0;
+        }
+    </style>
     <meta charset="utf-8" />
     <title></title>
     <script>
-        document.write("<h1>Basicos de JS (bucles condicionales y prompt)</h1>");
+       document.write("<h1>Basicos de JS (bucles condicionales y prompt)</h1>");
 //bucle de todos los numeros del 0 al 100
         document.write("bucle de todos los numeros del 0 al 100");
-        for (i = 0; i <= 100; i++) { 
+        for (i = 0; i <= 100; i++) {
         document.write(i);
         document.write("<br/>");
             i++;
@@ -50,8 +87,27 @@
         document.write("<br/>");
         document.write("---------------------------------------------------------------------");
         document.write("<br/>");
+
+//funcion que muestra el src de la imagen al pinchar en ella
+        function click_imagen(imagen_source) {
+            alert('este es el src: ' + imagen_source);
+        }
+
+//funcion que salta una alerta cando entras (pinchas) en un textfiel
+        function focus_imagen(field_message) {
+            alert(field_message);
+        }
     </script>
 </head>
 <body>
+    <img src="imagenes/AbuDhabi.jpg" onclick="click_imagen(this.src)" alt="200px" height="200px" />
+
+
+    <br />
+    ---------------------------------------------------------------------
+    <br />
+
+
+    <input type="text" onfocus="focus_imagen('Has entrado')" />
 </body>
 </html>

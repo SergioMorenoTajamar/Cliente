@@ -68,6 +68,25 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="HtmlPage1.html" />
+    <Content Include="imagenes\AbuDhabi.jpg" />
+    <Content Include="imagenes\belfast.jpg" />
+    <Content Include="imagenes\blade_runner.jpg" />
+    <Content Include="imagenes\Castillo.jpg" />
+    <Content Include="imagenes\Fondo-Paisaje-Luna.jpg" />
+    <Content Include="imagenes\fondolunajpg.jpg" />
+    <Content Include="imagenes\fondomar.jpg" />
+    <Content Include="imagenes\fondowide.jpg" />
+    <Content Include="imagenes\halloween.jpg" />
+    <Content Include="imagenes\irlanda.jpg.png" />
+    <Content Include="imagenes\maddona.jpg" />
+    <Content Include="imagenes\Malasia.jpg" />
+    <Content Include="imagenes\medellin.jpg" />
+    <Content Include="imagenes\navegar-mar-de-fondo.jpg" />
+    <Content Include="imagenes\sorolla.jpg" />
+    <Content Include="imagenes\Sultana.jpg" />
+    <Content Include="imagenes\superheroes.jpg" />
+    <Content Include="imagenes\unnamed.jpg" />
+    <Content Include="imagenes\virgen_nieves.jpg" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
