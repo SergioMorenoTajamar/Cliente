@@ -88,18 +88,55 @@
         document.write("---------------------------------------------------------------------");
         document.write("<br/>");
 
-//funcion que muestra el src de la imagen al pinchar en ella
+//Tabla de multiplicar del numero solicitado
+        document.write('Tabla del ' + numero + ': <br/>');
+        tablaMultiplicar(numero)
+        function tablaMultiplicar(entero) {
+            for (i = 0; i <= 10; i++) {
+                var multiplicacion = entero * i;
+                document.write(entero + 'por ' + i + '=' + multiplicacion);
+                document.write("<br/>");
+            }
+        }
+
+        //funcion que muestra el src de la imagen al pinchar en ella
         function click_imagen(imagen_source) {
             alert('este es el src: ' + imagen_source);
         }
 
-//funcion que salta una alerta cando entras (pinchas) en un textfiel
+        //funcion que salta una alerta cando entras (pinchas) en un textfiel
         function focus_imagen(field_message) {
             alert(field_message);
         }
+
+        var palabra1 = prompt('introduce una palabra');
+        var palabra2 = prompt('introduce otra palabra');
+
+        //separacion
+        document.write("<br/>");
+        document.write("---------------------------------------------------------------------");
+        document.write("<br/>");
+
+//comparador de longitud de palabras
+        document.write('comparador de longitud de palabras <br/>');
+        palabraMasLarga(palabra1, palabra2);
+        function palabraMasLarga(pal1, pal2) {
+            if (pal1.length < pal2.length) {
+                document.write('La palabra ' + pal2 + ' es mas larga <br/>');
+            } else {
+                document.write('La palabra ' + pal1 + ' es mas larga <br/>');
+            }
+        }
+
     </script>
 </head>
 <body>
+
+    <br />
+    ---------------------------------------------------------------------
+    <br />
+
+    <p>si pinchas en la imagen saldra un alert con su src</p>
     <img src="imagenes/AbuDhabi.jpg" onclick="click_imagen(this.src)" alt="AbuDhabi" width="200" height="200" />
 
 
@@ -107,7 +144,7 @@
     ---------------------------------------------------------------------
     <br />
 
-
+    <p>si hacr focus (pinchas) en el textfield saldra una alerta PD:no podras salir porque siempre estara con el focus xd</p>
     <input type="text" onfocus="focus_imagen('Has entrado')" />
 </body>
 </html>
