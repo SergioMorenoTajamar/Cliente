@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form method="" action="" name="formulario1">
+        Nombre:<input type="text" name="txtNombre" /> <br />
+        <input type="button" onclick="verNombre()" value="Ver Nombre" /><br />
+
+        <input type="checkbox" />Uno <br />
+        <input type="checkbox" />Dos <br />
+        <input type="checkbox" />Tres <br />
+        <input type="checkbox" />Cuatro <br /><br /><br />
+
+        Edad:<input type="number" name="numEdad" /> <br />
+        <input type="button" onclick="verificarEdad()" value="Ver Edad" /><br />
+    </form>
+<!--formulario con funcion para el filtro que actua sobre el submit-->
+    <form method="POST" action="http://www.ucm.es" name="frmDatos">
+        <input type="submit" value="enviar" onclick="return ComprobarNombre('Andres')" />
+    </form>
+    <br />
+<!--formulario con filtro sobre el onsubmit del propio form-->
+    <form method="POST" action="http://www.ucm.es" name="frmDatos2" onsubmit="return ComprobarNombre(frmDatos2.txtnombre.value)">
+        <input type="submit" value="enviar2" />
+    </form>
+</body>
+</html>
+<script>
+//Formas de acceder a un formulario
+    //primera forma de acceder al formulario
+    //document.forms[0];
+    //segunda forma de acceder al formulario
+    //document.forms["formulario1"];
+    //tercera forma de acceder al formulario
+    //document.forms.formulario1;
+    //cuarta forma de acceder al formulario
+    //document.formulario1;
+
+//Formas de acceder a un elemento dentro de el form
+    //primera forma de acceder al elemento
+    //formulario1.elements[0];
+    //segunda forma de acceder al elemento
+    //formulario1.txtNombre;
+
+//Bucle para encontrar todos los elementos checkbox y marcarlos
+    for (var i = 0; i < formulario1.elements.length; i++) {
+        if (formulario1.elements[i].type == "checkbox") {
+            formulario1.elements[i].checked = true;
+        }
+    }
+
+//Operador Condicional o Ternario, es una dorma cimplificada de hacer una condicional que solo tenga una condicion
+    function verificarEdad() {
+        formulario1.numEdad.value > 18 ? alert('puedes continuar') : alert('no puedes continuar');
+    }
+
+//Funcion que recoge lo introducido en el campo de texto y lo muestra en un alert al hacer click en el boton
+    function verNombre() {
+        var nombre = formulario1.txtNombre.value;
+        alert(nombre);
+    }
+//Funcion para filtrar nombre en el frmDatos
+    function ComprobarNombre(nombre) {
+        if (nombre == 'Andres') {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+</script>
