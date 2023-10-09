@@ -5,6 +5,33 @@
     <title></title>
 </head>
 <body>
+    <form name="formulario1">
+        <input type="radio" name="formEnvio" value="correos" />Correos<br />
+        <input type="radio" name="formEnvio" value="mensajeria" />mensajeria<br />
+        <input type="radio" name="formEnvio" value="avion" />avion<br />
+        <input type="radio" name="formEnvio" value="personalmente" />personalmente<br />
+        <input type="button" value="mostrar valor del boton seleccionado" onclick="muestraValor(this.form)"/>
+        Valor del boton seleccionado:<input type="text" name="radioSeleccionado"/>
+    </form>
 
 </body>
 </html>
+<script>
+    function muestraValor(formularioActivo) {
+        //indice del boton activado
+        var indexRadio = radioActivo(formularioActivo.formEnvio);
+        if (indexRadio >= 0) {
+            //si el boton esta activo mostramos su valor en un cuadro de texto
+            formularioActivo.radioSeleccionado.value = formularioActivo.formEnvio[indexRadio].value;
+        }
+    }
+    function radioActivo(grupoRadio) {
+        //repasar el grupo
+        for (i = 0; i < grupoRadio.length; i++) {
+            //al encontrar el boton seleccionado devuelvo su index
+            if (grupoRadio[i].checked) {
+                return i;
+            }
+        }
+    }
+</script>

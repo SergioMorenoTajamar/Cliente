@@ -1,0 +1,44 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form name="formulario1">
+        <select name="lista1">
+            <option value="Primer">Primero</option>
+            <option value="Segun">Segundo</option>
+            <option value="Tercer">Tercero</option>
+            <option value="Cuar">Cuarto</option>
+
+        </select>
+        <br />
+        <input type="button" value="mostrar" onclick="mostrar()" />
+        <br />
+        <input type="button" value="nuevo" onclick="crearNuevo()" />
+        <br />
+        <input type="button" value="borrar" onclick="borrarUno(4)" />
+    </form>
+
+</body>
+</html>
+<script>
+//Mostrar el select seleccionado en una alerta
+    function mostrar() {
+        var indice = formulario1.lista1.selectedIndex;
+        if (indice > 0) {
+            var seleccionado = formulario1.lista1.options[indice].value;
+            alert(seleccionado);
+        }
+    }
+//Crear un nuevo select
+    function crearNuevo() {
+        var nextIndex = formulario1.lista1.length;
+        formulario1.lista1.options[nextIndex] = new Option("Cinco", "cinc");
+    }
+//Borrar un select
+    function borrarUno(indice) {
+        formulario1.lista1.options[indice] = null;
+    }
+</script>
