@@ -3,6 +3,37 @@
 <head>
     <meta charset="utf-8" />
     <title></title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        select, input[type="text"], input[type="button"] {
+            margin: 10px 0;
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            width: 15%;
+        }
+
+        input[type="button"] {
+            background-color: #007bff;
+            color: #fff;
+            cursor: pointer;
+        }
+
+            input[type="button"]:hover {
+                background-color: #0056b3;
+            }
+    </style>
 </head>
 <body>
     <form name="formulario1">
@@ -21,23 +52,17 @@
 <script>
 
     function calcularPrecio() {
+        // Obtener el índice del elemento seleccionado en la lista desplegable "lista1" del formulario "formulario1"
         var indice = document.formulario1.lista1.selectedIndex;
-        var precio = 0;
-        precio = parseInt(indice.value) * parseInt(document.formulario1.cantidad.value);
-        alert(indice.value);
 
-        //if (indice == 0) {
-        //    precio = parseInt(document.formulario1.cantidad.value) * 4;
-        //    alert(precio);
-        //}
-        
-        //if (indice == 1) {
-        //    precio = parseInt(document.formulario1.lista1.cantidad.value) * 6;
-        //}
-        //if (indice == 2) {
-        //    precio = parseInt(document.formulario1.lista1.cantidad.value) * 10;
-        //}
-        //formulario1.total.value = precio;
+        // Inicializar la variable "precio" en 0 para almacenar el resultado del cálculo
+        var precio = 0;
+
+        // Calcular el precio multiplicando el valor seleccionado en la lista desplegable por la cantidad ingresada
+        precio = parseInt(document.formulario1.lista1.options[indice].value) * parseInt(document.formulario1.cantidad.value);
+
+        // Mostrar el precio calculado en una ventana emergente
+        formulario1.total.value = precio;
     }
 
 </script>
