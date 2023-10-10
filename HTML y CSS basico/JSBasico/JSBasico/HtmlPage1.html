@@ -1,0 +1,150 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f0f0f0;
+            text-align: center;
+        }
+
+        h1 {
+            background-color: #333;
+            color: white;
+            padding: 10px;
+        }
+
+        img {
+            border: 2px solid #333;
+            border-radius: 10px;
+            margin: 20px;
+            cursor: pointer;
+        }
+
+        input[type="text"] {
+            padding: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        hr {
+            border: 1px solid #333;
+            margin: 20px 0;
+        }
+    </style>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+       document.write("<h1>Basicos de JS (bucles, condicionales, prompt, self, onclick imagen y onfocus textfield)</h1>");
+//bucle de todos los numeros del 0 al 100
+        document.write("bucle de todos los numeros del 0 al 100");
+        for (i = 0; i <= 100; i++) {
+        document.write(i);
+        document.write("<br/>");
+            i++;
+        }
+
+ //separacion
+        document.write("<br/>");
+        document.write("---------------------------------------------------------------------");
+        document.write("<br/>");
+
+//suma de todos los numeros del 0 al 20
+        document.write("suma de todos los numeros del 0 al 20");
+        var suma = 0;
+        for (i = 0; i <= 20; i++) {
+            suma += i;
+            document.write(suma);
+            document.write("<br/>");
+        }
+
+ //separacion
+        document.write("<br/>");
+        document.write("---------------------------------------------------------------------");
+        document.write("<br/>");
+
+//verificacion de si un numero introducido en un prompt es par o impar
+        document.write("verificacion de si un numero introducido en un prompt es par o impar");
+        document.write("<br/>");
+        function parImpar(entero) {
+            if (entero % 2 == 0) {
+                return 'par';
+            }
+            else {
+                return 'impar';
+            }
+        }
+        var numero = prompt('introduce un numero entero');
+        document.write('el numero introducido es ' + parImpar(numero));
+
+//separacion
+        document.write("<br/>");
+        document.write("---------------------------------------------------------------------");
+        document.write("<br/>");
+
+//Tabla de multiplicar del numero solicitado
+        document.write('Tabla del ' + numero + ': <br/>');
+        tablaMultiplicar(numero)
+        function tablaMultiplicar(entero) {
+            for (i = 0; i <= 10; i++) {
+                var multiplicacion = entero * i;
+                document.write(entero + 'por ' + i + '=' + multiplicacion);
+                document.write("<br/>");
+            }
+        }
+
+        //funcion que muestra el src de la imagen al pinchar en ella
+        function click_imagen(imagen_source) {
+            alert('este es el src: ' + imagen_source);
+        }
+
+        //funcion que salta una alerta cando entras (pinchas) en un textfiel
+        function focus_imagen(field_message) {
+            alert(field_message);
+        }
+
+        var palabra1 = prompt('introduce una palabra');
+        var palabra2 = prompt('introduce otra palabra');
+
+        //separacion
+        document.write("<br/>");
+        document.write("---------------------------------------------------------------------");
+        document.write("<br/>");
+
+//comparador de longitud de palabras
+        document.write('comparador de longitud de palabras <br/>');
+        palabraMasLarga(palabra1, palabra2);
+        function palabraMasLarga(pal1, pal2) {
+            if (pal1.length < pal2.length) {
+                document.write('La palabra ' + pal2 + ' es mas larga <br/>');
+            } else {
+                document.write('La palabra ' + pal1 + ' es mas larga <br/>');
+            }
+        }
+
+    </script>
+</head>
+<body>
+
+    <br />
+    ---------------------------------------------------------------------
+    <br />
+
+    <p>si pinchas en la imagen saldra un alert con su src</p>
+    <img src="imagenes/AbuDhabi.jpg" onclick="click_imagen(this.src)" alt="AbuDhabi" width="200" height="200" />
+
+
+    <br />
+    ---------------------------------------------------------------------
+    <br />
+
+    <p>si hacr focus (pinchas) en el textfield saldra una alerta PD:no podras salir porque siempre estara con el focus xd</p>
+    <input type="text" onfocus="focus_imagen('Has entrado')" />
+</body>
+</html>

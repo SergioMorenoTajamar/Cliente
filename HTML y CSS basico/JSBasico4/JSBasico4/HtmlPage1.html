@@ -1,0 +1,59 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head> 
+<body>
+    <form name="formulario1">
+        <input type="checkbox" name="casilla1" onclick="contadorDeActivas(this)" />uno<br />
+        <input type="checkbox" name="casilla2" onclick="contadorDeActivas(this)" />Dos<br />
+        <input type="checkbox" name="casilla3" onclick="contadorDeActivas(this)" />Tres<br />
+        <input type="checkbox" name="casilla4" onclick="contadorDeActivas(this)" />Cuatro<br />
+        <input type="button" onclick="resetearContadores()" value="boton" />
+    </form>
+</body>
+</html>
+<script>
+    //numero maximo de casillas de verificacion que se pueden activar
+    const maxiNumAct = 3;
+    //numero minimo de casillas de verificacion que se pueden activar
+    const minNumAct = 1;
+    //total de carillas activas
+    var casiAct = 1;
+
+    function contadorDeActivas(checkeado) {
+        //Comprobar cuantas hay ya marcadas
+        //Comprobar el estado de la casilla actual 
+        if (checkeado.checked) {
+            //si esta activa
+            casiAct++;
+        } else {
+            //si no esta activa
+            casiAct--;
+        }
+        //Comprobamos si ha sobrepasado el maximo de casillas activas
+        if (casiAct > maxiNumAct) {
+            checkeado.checked = false;
+            casiAct = maxiNumAct;
+            alert('no puedes activar mas de ' + maxiNumAct + (maxiNumAct == 1 ? " casilla verificacion " : " casillas verificacion"))
+        }
+
+        //Comprobamos si esta por debajo del minimo de casillas activas
+        if (casiAct <= minNumAct) {
+            checkeado.checked = true;
+            casiAct = minNumAct;
+            alert('no puedes activar menos de ' + minNumAct + " casilla verificacion ");
+        }
+    }
+
+//funcion para descheckear todos los checkbox
+    function resetearContadores() {
+        casiAct = 0;
+        for (var i = 0; i < formulario1.elements.length; i++) {
+            if (formulario1.elements[i].type == "checkbox") {
+                formulario1.elements[i].checked = false;
+            }
+        }
+    }
+</script>

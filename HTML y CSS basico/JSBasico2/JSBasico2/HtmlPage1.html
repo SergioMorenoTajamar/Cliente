@@ -1,0 +1,119 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script>
+
+//ARRAYS
+        // Declarar un array
+        let diasSemana = new Array(7);
+
+        //Otra forma de decharar el array
+        let diasDemana2 = ["lunes", "martes", "miercoles", "jueves", "viernes", "sabado", "domingo"];
+
+        // Meter información en una posición concreta del array
+        diasSemana[0] = "lunes";
+        diasSemana[1] = "martes";
+
+        // Meter información con un bucle
+        for (let i = 0; i < 7; i++) {
+            diasSemana[i] = 'posicion ' + i + ' del array';
+        }
+
+        // Leer el array e imprimirlo en un alert
+        for (let i = 0; i < 7; i++) {
+            //alert(diasSemana[i]);
+        }
+
+        //concatenar arrays
+        let array1 = [1, 2, 3];
+        let array2 = [4, 5, 6];
+        array1 = array1.concat(array2);
+
+        //añadir un elemento al final del array
+        array1.push(7);
+
+        //añadir un elemento al principio del array
+        array1.unshift(8);
+
+        //eliminar el ultumo elemnto del array
+        array1.pop();
+
+        //ordena el array de forma ascendente
+        array1.sort();
+
+        //ordena el array de forma descendente
+        array1.reverse();
+
+        //mostrar array en consola
+        console.log(array1);
+
+    //Ejercicio ejemplo. Realizar las cuatro operaciones basicas con los numeros de este array
+        let valores = [true, 5, false, "hola", "adios", 2];
+        let suma = valores[1] + valores[5];
+        let resta = valores[1] - valores[5];
+        let multiplicacion = valores[1] * valores[5];
+        let division = valores[1] / valores[5];
+        console.log("el resultado de la suma es: " + suma);
+        console.log("el resultado de la resta es: " + resta);
+        console.log("el resultado de la multiplicacion es: " + multiplicacion);
+        console.log("el resultado de la division es: " + division);
+
+    //Ejercicio ejemplo. Realizar las cuatro operaciones basicas con los numeros de este array(version resumida)
+        console.log("el resultado de la suma es: " + (valores[1] + valores[5]));
+        console.log("el resultado de la resta es: " + (valores[1] - valores[5]));
+        console.log("el resultado de la multiplicacion es: " + (valores[1] * valores[5]));
+        console.log("el resultado de la division es: " + (valores[1] / valores[5]));
+
+
+
+//DATES
+    //Declarar una variable Date
+        let fechaActual = new Date();
+
+    //Otra forma de declarar una variable Date
+        let fecha = new Date("1/10/2003");
+
+    //Otra forma de declarar una variable Date
+        let fechaLarga = new Date("Saturday, Febraury 9, 2003");
+
+
+    //Imprimir la fecha (se pone +1 en el mes por que empieza a contar los meses como enero= el mes 0)
+        document.write(fechaActual.getDay() + "/" + (fechaActual.getMonth() + 1) + "/" + fechaActual.getFullYear());
+
+    //Otra forma de imprimir la fecha esta vez cambiando el numero de dia y de mes por el dia y mes escrito.
+        var meses = ["Enero", "Febrero", "Marzo", "Abril", "Mayo", "Junio", "Julio", "Agosto", "Septiembre", "Octubre", "Noviembre", "Diciembre"];
+        var diaSemana = ["Domingo", "Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado"];
+
+        document.write(", " + diaSemana[fechaActual.getDay()] + ", " + fechaActual.getDate() + " de " + meses[fechaActual.getMonth()] + " de " + fechaActual.getFullYear());
+
+//STRINGS
+    //declarar strings
+        let nombre = "Andres";
+        let apellido = new String("Perez");
+
+    //propiedades
+        var lomgitud = nombre.lenght;
+
+    //Metodos
+        //Encontrar Subcadenas
+        var str = "Hola Mundo, Hello world";
+        var n = str.indexOf("Hello");//esta opcion separa el hello
+        var m = str.slice(11, 16);//esta tambien separa el hello pero dandole manualmente la posicion de los caracteres
+
+        //Split
+        var string1 = "pepe, Jose, Pablo, Juan";
+        var arrayA = string1.split(", ");
+        document.write(arrayA);
+
+//EJERCICIOS
+        //Ejercicio 2.15 :Introducir cadena de caracteres y contar cuantas veces aparece cierto caracter
+        var cadena = prompt("introduce una cadena de caracteres");
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

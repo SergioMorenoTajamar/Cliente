@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form name="formulario1">
+        <select name="lista1">
+            <option value="4">Queso</option>
+            <option value="6">Jamon y queso</option>
+            <option value="10">Especial</option>
+        </select><br />
+        Introduce cantidad:<input type="text" name="cantidad" />
+
+        <br /><input type="button" value="calcular" onclick="calcularPrecio()" />
+        <input type="text" name="total" />
+    </form>
+</body>
+</html>
+<script>
+
+    function calcularPrecio() {
+        var indice = document.formulario1.lista1.selectedIndex;
+        var precio = 0;
+        precio = parseInt(indice.value) * parseInt(document.formulario1.cantidad.value);
+        alert(indice.value);
+
+        //if (indice == 0) {
+        //    precio = parseInt(document.formulario1.cantidad.value) * 4;
+        //    alert(precio);
+        //}
+        
+        //if (indice == 1) {
+        //    precio = parseInt(document.formulario1.lista1.cantidad.value) * 6;
+        //}
+        //if (indice == 2) {
+        //    precio = parseInt(document.formulario1.lista1.cantidad.value) * 10;
+        //}
+        //formulario1.total.value = precio;
+    }
+
+</script>
