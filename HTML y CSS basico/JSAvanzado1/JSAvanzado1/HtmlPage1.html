@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <span name="Dos" id="Tres">Uno</span>
+
+    <a href="#" onclick="testFunction()" id="example">Cambiar Contenido</a>
+
+    <p id="demo"></p>
+    <button id="aceptar">OK</button>
+</body>
+</html>
+<script>
+//Funciones DOM De Acceso directo
+    //Coje los elementos por su tag:div p span...
+    document.getElementsByTagName("span");
+    //Coje los elementos por su name
+    document.getElementsByName("Dos");
+    //Coje los elementos por su id
+    document.getElementById("Tres");
+
+//Propiedad innerHTML: manipula el contenido HTML de un elemento
+    function testFunction() {
+        document.getElementById('example').innerHTML = "<h1>Esto es un contenido ficticio</h1>";
+    }
+
+//Anadir un evento click a un botton y asociarle una funcion
+    aceptar.addEventListener("click", function () {
+        document.getElementById("demo").innerHTML = "Hello world";
+    });
+
+</script>
