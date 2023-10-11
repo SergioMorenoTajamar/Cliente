@@ -57,6 +57,7 @@ C:\Users\mores\OneDrive\Documentos\Tajamar\Proyectos\Cliente\HTML y CSS basico\J
 C:\Users\mores\OneDrive\Documentos\Tajamar\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\obj\Debug\JSEjercicio10Octubre2.csproj.CopyComplete
 C:\Users\mores\OneDrive\Documentos\Tajamar\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\obj\Debug\JSEjercicio10Octubre2.dll
 C:\Users\mores\OneDrive\Documentos\Tajamar\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\obj\Debug\JSEjercicio10Octubre2.pdb
+<<<<<<< HEAD
 C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\bin\JSEjercicio10Octubre2.dll.config
 C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\bin\JSEjercicio10Octubre2.dll
 C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\bin\JSEjercicio10Octubre2.pdb
@@ -116,3 +117,5 @@ C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\HTML y CSS basico\JSEjer
 C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\obj\Debug\JSEjercicio10Octubre2.csproj.CopyComplete
 C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\obj\Debug\JSEjercicio10Octubre2.dll
 C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\HTML y CSS basico\JSEjercicio10Octubre2\JSEjercicio10Octubre2\obj\Debug\JSEjercicio10Octubre2.pdb
+=======
+>>>>>>> bc2ef9d99f9228748372b0787da695761aec4888
