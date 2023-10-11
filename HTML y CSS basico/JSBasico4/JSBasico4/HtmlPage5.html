@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" onclick="crearVentana()" value="Crear ventana" />
+</body>
+</html>
+<script>
+    var myWindow;
+
+    function crearVentana() {
+        myWindow = window.open("", "_blank");
+        myWindow.document.write('<input type="button" onclick="cerrarVentana()" value="Cerrar ventana" />');
+    }
+
+    function cerrarVentana() {
+        if (myWindow) {
+            myWindow.close();
+        }
+    }
+</script>

@@ -1,0 +1,18 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 4</title>
+</head>
+<body>
+    Introduce numero de Personas:<input type="text" name="personas" id="personas" />
+    <input type="button" value="Mostrar cantidades" onclick="calculaCantidades()" />
+</body>
+</html>
+<script>
+    function calculaCantidades() {
+        var personas = parseInt(document.getElementById("personas").value);
+        var patatas = 200 * personas;
+        alert("Se necesitan: " + patatas + " gramos de patata, " + (patatas / 1000) * 5 + " huevos y " + (patatas / 1000) * 300 + " gramos de cebolla");
+    }
+</script>

@@ -1,0 +1,55 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio1</title>
+</head>
+<body>
+    <h1>Introduce tres numeros:</h1>
+    <form>
+        <label for="numero1">Numero 1:</label>
+        <input type="number" id="numero1" required><br />
+
+        <label for="numero2">Numero 2:</label>
+        <input type="number" id="numero2" required><br />
+
+        <label for="numero3">Numero 3:</label>
+        <input type="number" id="numero3" required><br />
+
+        <input type="button" value="Calcular Media" onclick="calcularMedia()">
+        <input type="button" value="Mayor y Menor" onclick="mayorMenor()">
+    </form>
+
+    <h1>Resultados:</h1>
+    <p>Media: <input type="text" id="media" readonly></p>
+    <p>Mayor: <input type="text" id="mayor" readonly></p>
+    <p>Menor: <input type="text" id="menor" readonly></p>
+</body>
+</html>
+<script>
+//Funcion para calcular la media
+    function calcularMedia() {
+            //Declaramos variables asociadas a los valores de los numeros introducidos por el usuario y calculamos la media
+            var numero1 = parseInt(document.getElementById("numero1").value);
+            var numero2 = parseInt(document.getElementById("numero2").value);
+            var numero3 = parseInt(document.getElementById("numero3").value);
+            var media = (numero1 + numero2 + numero3) / 3;
+
+            //mostramos la media en su respectivo input de tipo text
+            document.getElementById("media").value = media;
+        }
+
+//Funcion para encontrar el mayor y el menor
+    function mayorMenor() {
+            //Declaramos variables asociadas a los valores de los numeros introducidos por el usuario y usando el objeto Math vemos el min y max
+            var numero1 = parseInt(document.getElementById("numero1").value);
+            var numero2 = parseInt(document.getElementById("numero2").value);
+            var numero3 = parseInt(document.getElementById("numero3").value);
+            var mayor = Math.max(numero1, numero2, numero3);
+            var menor = Math.min(numero1, numero2, numero3);
+
+            //mostramos los resultados en sus respectivos inputs de tipo text
+            document.getElementById("mayor").value = mayor;
+            document.getElementById("menor").value = menor;
+        }
+</script>
