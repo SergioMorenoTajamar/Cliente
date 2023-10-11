@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjercicioJS10octubre", "EjercicioJS10octubre\EjercicioJS10octubre.csproj", "{AC01EC91-0E44-44EC-B34E-353D88EB47CC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AC01EC91-0E44-44EC-B34E-353D88EB47CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AC01EC91-0E44-44EC-B34E-353D88EB47CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AC01EC91-0E44-44EC-B34E-353D88EB47CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AC01EC91-0E44-44EC-B34E-353D88EB47CC}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A28CE695-4886-4A4A-9F0F-4C333CA25838}
+	EndGlobalSection
+EndGlobal

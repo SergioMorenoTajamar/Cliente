@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Ejercicio 3</title>
+</head>
+<body>
+    <form>
+        Nombre:<input type="text" id="nombre"><br />
+
+        Dia de nacimiento:<input type="number" id="diaNacimiento"><br />
+
+        Mes de nacimiento:<input type="number" id="mesNacimiento"><br />
+
+
+    </form>
+
+</body>
+</html>
+<script>
+    function generarMensaje() {
+        var nombre = document.getElementById("nombre").value;
+        var diaNacimiento = document.getElementById("diaNacimiento").value;
+        var mesNacimiento = document.getElementById("mesNacimiento").value;
+
+        alert(nombre + ",nacido el " + diaNacimiento + "/" + mesNacimiento);
+    }
+</script>
