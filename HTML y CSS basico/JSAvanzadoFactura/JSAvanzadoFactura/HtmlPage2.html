@@ -1,0 +1,35 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+<script src="clienteBiblioteca.js"></script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <form>
+        Nombre Biblioteca: <input type="text" id="txtBiblioteca" /><br />
+        Libro Terror 1 : <input type="text" id="txtTerror1" /><br />
+        Autor libro Terror 1 : <input type="text" id="txtAutor1" /><br />
+        Libro Terror 2 : <input type="text" id="txtTerror2" /><br />
+        Autor libro Terror 2 : <input type="text" id="txtAutor2" /><br />
+        <hr />
+        Novela negra : <input type="text" id="txtNovelaNegra" /><br />
+        Autor Novela negra : <input type="text" id="txtAutorNegra" /><br />
+        <hr />
+        <input type="button" id="botonAceptar" value="Crear Biblioteca" onclick="crearBiblioteca()"/>
+    </form>
+</body>
+</html>
+<script>
+    function crearBiblioteca() {
+        var nombreBiblioteca = document.getElementById("txtBiblioteca").value;
+        var bibliotecaNueva = new Biblioteca(nombreBiblioteca);
+
+        var tituloTerror1 = document.getElementById("txtTerror1").value;
+        var autorTerror1 = document.getElementById("txtAutor1".value);
+        var libroTerror1Nuevo = new Libro(tituloTerror1, autorTerror1);
+
+        bibliotecaNueva.addLibro(libroTerror1Nuevo);
+        alert(bibliotecaNueva.muestraTodosLosLibros());
+    }
+</script>

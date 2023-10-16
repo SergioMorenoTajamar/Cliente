@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <a href="http://elpais.com">Ir a el pais</a>
+</body>
+</html>
+<script>
+    $(function () {
+        $("a").click(function (event) {
+            alert("Has pulsado el enlace");
+            event.preventDefault();
+        })
+    })
+</script>

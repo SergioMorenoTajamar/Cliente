@@ -15,7 +15,7 @@ myFunc2("Sergio", "soleado");
 
 //Parametros Rest: capturar cualquier argumento adicional
 
-function myFunc3(bame, weather, ...extraArgs) {
+function myFunc3(name, weather, ...extraArgs) {
     console.log(`Hola ${name}`);
     console.log(`Hoy esta ${weather}`);
     for (let i = 0; i < extraArgs.length; i++) {

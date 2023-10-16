@@ -1,0 +1,49 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <input type="button" onclick="factura.muestraTotal()" value="Muestra Total" />
+    <script>
+        var factura = {
+            empresa: {
+                nombre: "Nombre de la empresa",
+                direccion: "Direccion de la empresa",
+                telefono: "080808080",
+                nif: "12121212A"
+            },
+            cliente: {
+                nombre: "Nombre del cliente",
+                direccion: "Direccion del cliente",
+                telefono: "080808080",
+                nif: "12121212A"
+            },
+            productos: [
+                { descripcion: "Producto1", cantidad: 12, precio: 234 },
+                { descripcion: "Producto2", cantidad: 8, precio: 120 },
+                { descripcion: "Producto3", cantidad: 4, precio: 80 }
+            ],
+            informacion: {
+                baseImponible: 0,
+                iva: 21,
+                total: 0,
+                formaPago: "efectivo"
+            },
+            calculoTotal: function () {
+                for (var i = 0; i < this.productos.length; i++) {
+                    this.informacion.baseImponible += this.productos[i].cantidad * this.productos[i].precio;
+                }
+//EXAMEN!!!!!!!
+                var importeIva = (1 + (this.informacion.iva / 100));
+                this.informacion.total = (this.informacion.baseImponible * importeIva).toFixed(2);
+            },
+            muestraTotal: function () {
+                this.calculoTotal();
+                alert(`Total = ` + this.informacion.total + `€`);
+            }
+        }
+    </script>
+</body>
+</html>

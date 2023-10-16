@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="capa" style="padding:10px; background-color:#ff0000">
+        Pon el raton encima de la capa
+    </div><br />
+    <div id="mensaje" style="display:none">
+        Has puesto el raton encima de la capa, ahora quitalo
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#capa").mouseenter(function () {
+            $("#mensaje").css("display", "block");
+        });
+        $("#capa").mouseleave(function () {
+            $("#mensaje").css("display", "none");
+        });
+    });
+</script>

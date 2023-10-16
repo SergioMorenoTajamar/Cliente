@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="capa" style="padding: 10px; background-color: #ff0000">
+        Haz click en un boton
+    </div>
+    <form>
+        <input type="button" value="Boton A" onclick="$(`#capa`).html(`has hecho chick en el boton <b>A</b>`)"/><br />
+        <input type="button" value="Boton B" onclick="$(`#capa`).html(`has hecho chick en el boton <b>B</b>`)"/><br />
+    </form>
+</body>
+</html>
+<script>
+    $(function () {
+        //Codigo Jquery aqui dentro para el el jQuery se haga una vez la pagina este montada
+    })
+</script>
