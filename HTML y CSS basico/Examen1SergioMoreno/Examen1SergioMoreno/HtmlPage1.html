@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Factura</h1>
+    <form id="facturaForm">
+        <label for="nombre">Cliente:</label><br />
+        <input type="text" id="nombre"><br />
+
+        <label for="trabajo">Trabajo:</label><br />
+        <select id="trabajo">
+            <option value="Vacio"></option>
+            <option value="albañileria">Albañilería</option>
+            <option value="fontaneria">Fontanería</option>
+            <option value="electricidad">Electricidad</option>
+            <option value="carpinteria">Carpintería</option>
+        </select><br />
+
+        <label for="horas">Nº de Horas:</label><br />
+        <input type="number" id="horas"><br />
+
+        <label for="precioHora">Precio por Hora:</label><br />
+        <input type="number" id="precioHora"><br />
+
+        <label>IVA:</label><br />
+        <input type="radio" name="iva" value="si" id="ivaSi">
+        <label for="ivaSi">Sí</label>
+        <input type="radio" name="iva" value="no" id="ivaNo">
+        <label for="ivaNo">No</label><br />
+
+        <label for="importe">Importe:</label><br />
+        <input type="number" id="importe"><br />
+
+        <label for="ivaFinal">Iva(21%):</label><br />
+        <input type="number" id="ivaFinal"><br />
+
+        <label for="total">Total:</label><br />
+        <input type="number" id="total"><br />
+
+        <label for="conformeCliente">Conforme Cliente</label><br />
+        <input type="checkbox" id="conformeCliente"><br />
+
+        <button type="button" id="calcular" onclick="Calcular()">Enviar</button>
+    </form>
+</body>
+</html>
+<script>
+//Funcion Calcular
+    function Calcular() {
+//Nos aseguramos que el checkbox conformeCliente esta marcado o lanzamos alerta
+        var conformeCliente = document.getElementById("conformeCliente").checked;
+        if (conformeCliente) {
+            var nombre = document.getElementById("nombre").value;
+            var trabajo = document.getElementById("trabajo").value;
+            var horas = parseFloat(document.getElementById("horas").value);
+            var precioHora = parseFloat(document.getElementById("precioHora").value);
+            var ivaSi = document.getElementById("ivaSi");
+            var ivaFinal = ivaSi.checked ? 0.21 : 0;
+            var importe = horas * precioHora;
+            var ivaCalculado = importe * ivaFinal;
+            var total = importe + ivaCalculado;
+
+            document.getElementById("importe").value = importe.toFixed(2);
+            document.getElementById("ivaFinal").value = ivaCalculado.toFixed(2);
+            document.getElementById("total").value = total.toFixed(2);
+
+            console.log('Nombre:' + nombre);
+            console.log('Trabajo:' + trabajo);
+            console.log('Total a facturar:' + total);
+        } else {
+            alert("Marque la casilla Conforme Cliente para continuar.")
+        }
+    }
+</script>

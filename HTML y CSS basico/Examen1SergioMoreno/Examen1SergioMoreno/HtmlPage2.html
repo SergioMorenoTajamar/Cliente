@@ -1,0 +1,27 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <h1>Pulsa F12!!!!</h1>
+</body>
+</html>
+<script>
+    var resultados = [];
+    for (let i = 0; i < 6; i++) {
+        var dado1 = Math.floor(Math.random() * 6) + 1;;
+        var dado2 = Math.floor(Math.random() * 6) + 1;;
+        var suma = dado1 + dado2;
+        resultados.push(suma);
+    }
+
+    console.log("Resultados sin ordenar:");
+    console.log(resultados);
+
+    resultados.sort((a, b) => b - a);
+
+    console.log("Resultados ordenados de mayor a menor:");
+    console.log(resultados);
+</script>

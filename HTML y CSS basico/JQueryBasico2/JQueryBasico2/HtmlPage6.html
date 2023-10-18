@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <input type="text" name="nombre" id="nombre" class="nombre"/>
+    <input type="button" name="boton01" id="boton01" value="Sacar el valor de imput text"/>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#boton01").click(function () {
+            //Sacar el valor accediendo al input mediante el name
+            alert($("input:text[name=nombre]").val());
+            //Sacar el valor accediendo al input mediante el name sin especificar que es un text
+            alert($("input[name=nombre]").val());
+            //Sacar el valor accediendo al input mediante el id
+            alert($("#nombre").val());
+            //Sacar el valor accediendo al input mediante la clase
+            alert($(".nombre").val());
+        })
+    })
+</script>

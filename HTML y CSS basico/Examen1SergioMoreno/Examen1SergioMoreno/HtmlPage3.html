@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    
+</head>
+<body>
+    <h1>Calculadora</h1>
+    <table>
+        <tr>
+            <td colspan="4">
+                <input type="text" id="campoResultado" >
+            </td>
+        </tr>
+        <tr>
+            <td><button onclick="agregarDigito(1)">1</button></td>
+            <td><button onclick="agregarDigito(2)">2</button></td>
+            <td><button onclick="agregarDigito(3)">3</button></td>
+            <td><button onclick="agregarOperador('+')">+</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="agregarDigito(4)">4</button></td>
+            <td><button onclick="agregarDigito(5)">5</button></td>
+            <td><button onclick="agregarDigito(6)">6</button></td>
+            <td><button onclick="agregarOperador('-')">-</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="agregarDigito(7)">7</button></td>
+            <td><button onclick="agregarDigito(8)">8</button></td>
+            <td><button onclick="agregarDigito(9)">9</button></td>
+            <td><button onclick="agregarOperador('*')">x</button></td>
+        </tr>
+        <tr>
+            <td><button onclick="limpiarPantalla()">C</button></td>
+            <td><button onclick="agregarDigito(0)">0</button></td>
+            <td><button id="igual" onclick="calcular()">=</button></td>
+            <td><button onclick="agregarOperador('/')">/</button></td>
+        </tr>
+    </table>
+</body>
+</html>
+<script>
+    let operacion = '';
+    var campoResultado = document.getElementById("campoResultado");
+
+    function agregarDigito(digito) {
+        operacion += digito;
+        campoResultado.value = operacion;
+    }
+
+    function agregarOperador(operador) {
+        operacion += operador;
+        campoResultado.value = operacion;
+    }
+
+    function calcular() {
+        var resultado = eval(operacion);
+        campoResultado.value = resultado;
+        operacion = resultado.toString();
+    }
+
+    function limpiarPantalla() {
+        operacion = "";
+        campoResultado.value = "";
+    }
+</script>

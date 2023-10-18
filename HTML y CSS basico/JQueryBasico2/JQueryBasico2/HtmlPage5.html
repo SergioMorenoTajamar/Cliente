@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="division">
+        <p>Escribe un valor a guardar leer o eliminar: <input type="text" id="texto" /></p>
+        <p>
+            <button onclick="guardaDato()">Guardar dato</button>
+            <button onclick="leerDato()">Leer dato</button>
+            <button onclick="eliminaDato()">Eliminar dato</button>
+        </p>
+    </div>
+</body>
+</html>
+<script>
+    function guardaDato() {
+        $("#division").data("miData", $("#texto").val());
+        $("#texto").val("");
+    };
+    function leerDato() {
+        alert($("#division").data("miData"));
+    };
+    function eliminaDato() {
+        $("#division").removeData("miData");
+    };
+   
+</script>

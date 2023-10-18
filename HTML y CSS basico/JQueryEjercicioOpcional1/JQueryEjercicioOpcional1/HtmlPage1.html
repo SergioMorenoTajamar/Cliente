@@ -1,0 +1,53 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Ejercicio Propuesto</h1>
+    <form>
+        Nombre:<input type="text" id="nombre"><br />
+        Apellido:<input type="text" id="apellido"><br />
+        <input type="button" id="concatenar" value="Concatenar Nombre"><br />
+        Nombre Completo:<input type="text" id="nombreCompleto" readonly><br />
+
+        Sexo:<br>
+        <input type="radio" name="sexo" id="hombre" value="hombre">Hombre<br>
+
+        <input type="radio" name="sexo" id="mujer" value="mujer">Mujer<br>
+
+        Compartir datos?<input type="checkbox" id="compartirDatos"><br />
+
+
+        Hobbies:<select id="hobbie">
+            <option value="0"></option>
+            <option value="videojuegos">Videojuegos</option>
+            <option value="deporte">Deporte</option>
+            <option value="musica">Musica</option>
+        </select><br />
+
+        <input type="button" id="aceptar" value="Aceptar"><br />
+    </form>
+</body>
+</html>
+<script>
+    $(function () {
+    $("#concatenar").Click(function () {
+        var nombreCompleto = $("#nombre").val() + " " + $("#apellido").val();
+        $("#nombreCompleto").val(nombreCompleto);
+    });
+
+    $("#aceptar").Click(function () {
+        var nombreCompleto = $("#nombre").val() + " " + $("#apellido").val();
+        var sexo = $("input[name=sexo]:checked").val(); 
+        var comDat = $("#compartirDatos").is(":checked") ? "Si Comparte datos" : "No Comparte datos";
+        var hobbie = $("#hobbie").val();
+
+        var nuevoDiv = $("<div></div>");
+        nuevoDiv.html("1 " + nombreCompleto + "<br>2 " + sexo + "<br>3 " + comDat + "<br>4 " + hobbie);
+        $("body").append(nuevoDiv);
+    });
+});
+</script>

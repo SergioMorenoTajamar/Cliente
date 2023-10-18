@@ -1,0 +1,36 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div></div>
+    <div class="inner">
+        Goodbye
+    </div>
+
+    <div class="conteiner">
+        <p>primer parrafo</p>
+        <p>segundo parrafo</p>
+        <p>tercer parrafo</p>
+        <p>cuarto parrafo</p>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        let nuevosElementos = $("<div>Elementos que creo en tiempo de <b>Ejecucion</b> Creando...</div>");
+        nuevosElementos.appendTo("body");
+        $(".inner").before(nuevosElementos);
+
+        $(".conteiner > p").each(function (i) {
+            if (i % 2 === 0) {
+                $(this).css("background-color", "green");
+            } else {
+                $(this).css("background-color", "red");
+            }
+        });
+    });
+</script>

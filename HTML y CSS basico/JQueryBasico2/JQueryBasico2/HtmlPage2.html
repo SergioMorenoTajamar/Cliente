@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="miElemento">Elemento con ID</div>
+    <p class="miClase">Elemento con Clase</p>
+    <ul>
+        <li>Elemento Anidado</li>
+    </ul>
+
+    <div id="contenedor">
+        <p class="parrafo">Primer Párrafo</p>
+        <div>
+            <p class="parrafo">Párrafo Anidado</p>
+        </div>
+        <p class="parrafo">Segundo Párrafo</p>
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+        // Acceder al elemento por su ID y cambiar el fondo
+        $("#miElemento").css("background-color", "blue");
+
+        // Acceder al elemento por su clase y cambiar el color de texto
+        $(".miClase").css("color", "red");
+
+        // Acceder a elementos anidados y cambiar el tamaño de fuente
+        $("ul li").css("font-size", "20px");
+
+        // Cambiar el fondo de todos los párrafos directamente dentro de #contenedor
+        $("#contenedor > p").css("background-color", "green");
+    })
+</script>

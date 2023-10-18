@@ -1,0 +1,25 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <div id="capa">
+        Esta capa
+    </div>
+</body>
+</html>
+<script>
+    $(function () {
+//Creamos la data
+        $("#capa").data("miData", "miValor");
+//Mostramos la data
+        alert($("#capa").data("miData"));
+//Borramos la data
+        $("#capa").removeData("miData");
+//mostramos la data y nos da Undefined
+        alert($("#capa").data("miData"));
+    })
+</script>
