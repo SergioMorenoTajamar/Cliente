@@ -1,0 +1,19 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <input id="target" type="button" value="Este boton aparece y desaparece" />
+    <input id="boton" type="button" value="Toggle" />
+</body>
+</html>
+<script>
+    $(function () {
+        $("#boton").Click(function () {
+            $("#target").toggle("slow");
+        })
+    })
+</script>

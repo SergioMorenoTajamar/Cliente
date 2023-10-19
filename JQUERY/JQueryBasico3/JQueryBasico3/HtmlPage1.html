@@ -1,0 +1,83 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+    <body>
+        <p>Primero</p>
+        <ul>
+            <li><a href="#">Programación</a></li>
+            <li><a href="modBD.html">Base de Datos</a></li>
+            <li><a href="SImod.html">Sistemas Informáticos</a></li>
+            <li><a href="mod-LM.html">Lenguajes de Marcas</a></li>
+            <li><a>Formación y Orientación Laboral</a></li>
+            <li></li>
+        </ul>
+
+        <p>Segundo</p>
+        <ul>
+            <li>
+                DWESE
+                <ul>
+                    <li>Desarrollo Web en Entorno Servidor</li>
+                    <li>10 horas</li>
+                </ul>
+            </li>
+            <li>
+                DWECL
+                <ul>
+                    <li>Desarrollo Web en Entorno Cliente</li>
+                    <li>7 horas</li>
+                </ul>
+            </li>
+            <li>
+                DAW
+                <ul>
+                    <li>Despliegue de Aplicaciones Web</li>
+                    <li>3 horas</li>
+                </ul>
+            </li>
+            <li>
+                DIWEB
+                <ul>
+                    <li>Diseño de Interfaces Web</li>
+                    <li>6 horas</li>
+                </ul>
+            </li>
+            <li>
+                EIE
+                <ul>
+                    <li>Entorno e Iniciativa Empresarial</li>
+                    <li>4 horas</li>
+                </ul>
+            </li>
+        </ul>
+    </body>
+</html>
+<script>
+    $(function () {
+        // Cambia el color del texto de los enlaces (<a>) que son descendientes directos
+        // de la primera lista desordenada (<ul>), y los establece en rojo.
+        $("ul:first > li > a").css({ color: "black" });
+
+        //.eq(2).find("a") busca los enlaces (<a>) dentro de el tercer  elemento y los establece en verde.
+        $("ul:first > li").eq(2).find("a").css("color", "green");
+
+        // selecciona todos los elementos hermanos siguientes a ese tercer elemento. Luego,
+        // busca los enlaces(<a>) dentro de esos elementos hermanos y los establece en púrpura.
+        $("ul:first > li").eq(2).nextAll().find("a").css("color", "purple");
+
+        //Seleccionar todos los modulos con atributo href
+        $("ul:first > li > a[href]").css({ color: "red" });
+
+        //Seleccionar por modulos que contengan una determinada cadena 'mod', si cambiamos el * por un $ buscaria que acabaran en "mod"
+        $('ul:first > li > a[href*="mod"]').css({ 'font-size': "1.4em" });
+
+        $("ul > li > ul").find('li:contains(horas)').css("color", "green");
+
+        //seleccionar elementos vacios y anadir contenido
+        $('*:empty').text('Nodo vacio');
+    })
+</script>

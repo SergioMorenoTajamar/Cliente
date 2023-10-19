@@ -1,0 +1,38 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/jquery-3.7.1.js"></script>
+</head>
+<body>
+    <h1>Eventos de teclado</h1>
+    <h2>Averiguar cual es la tecla pulsada</h2>
+    <form>
+        <textarea cols="300" placeholder="Escribe aqui" id="miTexto"></textarea><br />
+        <b>tecla pulsada</b><br />
+        <div id="loEscrito"></div><br /><br />
+
+        <button id="miBoton">Haz clic</button>
+        <div id="mensaje"></div>
+    </form>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#miTexto").keypress(function (event) {
+            event.preventDefault();
+            $("#loEscrito").html(event.which + ":" + String.fromCharCode(event.which))
+        })
+
+        // Selecciona el botón por su ID
+        var boton = $('#miBoton');
+
+        // Vincula un controlador de eventos al botón para el evento 'click'
+        boton.bind('click', function () {
+            // Cuando se hace clic en el botón, muestra un mensaje en el div
+            $('#mensaje').text('¡Haz hecho clic en el botón!');
+        });
+
+    })
+</script>

@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-3.7.1.js"></script>
+    <title></title>
+</head>
+<body>
+    <form>
+        Texto a Buscar:
+        <input type="text" id="txtBuscar" placeholder="Buscar..." />
+        <input type="button" id="boton" value="Buscar" />
+        <div id="capa"></div>
+    </form>
+</body>
+</html>
+<script>
+    $(function () {
+        $("#txtBuscar").focus(function () {
+            $(this).attr("value", "");
+        });
+        $("#boton").click(function () {
+            var textoABuscar = $("#txtBuscar").val();
+            $("#capa").html("Vamos a buscar este texto: " + textoABuscar);
+            $("#txtBuscar").val("");
+        });
+    });
+</script>

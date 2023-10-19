@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet"
+          href="https://code.jquery.com/ui/1.13.2/themes/dot-luv/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body>
+    <h1>Autocompletado</h1>
+    <input id="autocomplete" />
+
+    <h1>Spinner</h1>
+    <input id="spinner" />
+</body>
+</html>
+<script>
+    $("#autocomplete").autocomplete({
+        source: ["araña", "anaconda", "serpiente"],
+        delay: 0000,
+        minLength: 1
+    })
+
+    $("#spinner").spinner({
+        min: 0,
+        max: 100,
+        step:10
+    })
+</script>
