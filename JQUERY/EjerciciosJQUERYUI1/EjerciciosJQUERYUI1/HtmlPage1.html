@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title></title>
+    <link rel="stylesheet"
+          href="https://code.jquery.com/ui/1.13.2/themes/dot-luv/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body>
+    <h1>Generar DataPicker</h1>
+    Fecha:<input type="button" value="calendario" name="fecha" id="datepicker" />
+    <div id="dialog"></div>
+</body>
+</html>
+<script>
+    $(function () {
+        $.datepicker.regional['es'] = {
+            closeText: 'Cerrar',
+            prevText: '<Ant',
+            nextText: 'Sig>',
+            currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional["es"]);
+
+
+        // Inicializa un campo de entrada (input) con el ID "datepicker" como un datepicker con opciones adicionales.
+        $("#datepicker").datepicker({
+            onSelect: function (dateText) {
+                // Cuando se selecciona una fecha en el datepicker con ID "datepicker," se ejecuta esta función.
+                // Se muestra un diálogo con la fecha seleccionada.
+                $("#dialog").html("Fecha seleccionada: " + dateText);
+                $("#dialog").dialog("open");
+            }
+        });
+
+        // Inicializa un diálogo con el ID "dialog," pero lo mantiene cerrado inicialmente.
+        $("#dialog").dialog({
+            autoOpen: false, // El diálogo no se abre automáticamente.
+            modal: true,     // Hace que el diálogo sea modal, lo que evita que el usuario interactúe con otros elementos de la página mientras el diálogo está abierto.
+            buttons: {
+                "Cerrar": function () {
+                    // Agrega un botón "Cerrar" al diálogo que, cuando se hace clic, cierra el diálogo.
+                    $(this).dialog("close"); // Cierra el diálogo cuando se hace clic en el botón "Cerrar".
+                }
+            }
+        });
+
+    })
+
+
+</script>

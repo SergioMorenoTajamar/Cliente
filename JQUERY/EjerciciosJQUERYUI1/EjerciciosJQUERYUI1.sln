@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.6.33829.357
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "EjerciciosJQUERYUI1", "EjerciciosJQUERYUI1\EjerciciosJQUERYUI1.csproj", "{CDAB138A-6189-4E79-8A47-1085E5CF130C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CDAB138A-6189-4E79-8A47-1085E5CF130C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CDAB138A-6189-4E79-8A47-1085E5CF130C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CDAB138A-6189-4E79-8A47-1085E5CF130C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CDAB138A-6189-4E79-8A47-1085E5CF130C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EACD582C-2DDC-4B1A-ABF0-49ED4A5064B7}
+	EndGlobalSection
+EndGlobal
