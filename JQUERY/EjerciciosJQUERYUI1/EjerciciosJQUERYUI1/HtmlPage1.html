@@ -7,11 +7,36 @@
           href="https://code.jquery.com/ui/1.13.2/themes/dot-luv/jquery-ui.css" />
     <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
     <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            max-width: 1140px;
+            margin: 0 auto;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+      
+    </style>
 </head>
 <body>
-    <h1>Generar DataPicker</h1>
-    Fecha:<input type="button" value="calendario" name="fecha" id="datepicker" />
-    <div id="dialog"></div>
+    <div class="container mt-5">
+        <h1 class="mb-4">Generar DatePicker</h1>
+        <div class="form-group">
+            <label for="fecha">Fecha:</label>
+            <input type="text" class="form-control" id="datepicker" placeholder="Seleccionar fecha">
+        </div>
+        <div id="dialog"></div>
+    </div>
 </body>
 </html>
 <script>
