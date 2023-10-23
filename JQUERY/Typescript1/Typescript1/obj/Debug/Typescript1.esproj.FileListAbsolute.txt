@@ -1,2 +1,0 @@
-C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\JQUERY\Typescript1\Typescript1\obj\Debug\Typescript1.esproj.SuggestedBindingRedirects.cache
-C:\Users\Alumnos MCSD Tarde\Documents\Proyectos\Cliente\JQUERY\Typescript1\Typescript1\obj\Debug\Typescript1.esproj.CoreCompileInputs.cache
