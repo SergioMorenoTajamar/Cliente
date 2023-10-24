@@ -4,7 +4,7 @@ export class SimpleDataSource {
   private data:Product[];
 
   constructor(){
-    this.data = nre Array<product>(
+    this.data = new Array<Product>(
       new Product(1,"kayak","WaterSport",275),
       new Product(2,"LifeJacket","WaterSport",48.95),
       new Product(3,"Soccer Ball","Soccer",19.50),

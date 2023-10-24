@@ -1,0 +1,51 @@
+<div class="bg-info text-black m-2 p-2">
+  there are {{model.getCourses().length}} courses in the model
+</div>
+
+<br />
+<br />-----------------------------------------------------------------
+<br />
+<br />
+
+<!--Ejercicio 10.1-->
+<div class="m-2 p-2"
+     [class.bg-warning]="model.getCourse(2).seatCapacity < 17"
+     [class.bg-success]="model.getCourse(2).seatCapacity >= 17">
+  The second course is {{model.getCourse(2).title}}
+</div>
+
+<br />
+<br />-----------------------------------------------------------------
+<br />
+<br />
+
+<!--Ejercicio 10.2-->
+<div class="m-2 p-2">
+  <div [ngClass]="getClassEj2(1)">
+    The first course is {{model.getCourse(1).title}}
+  </div>
+  <div [ngClass]="getClassEj2(2)">
+    The second course is {{model.getCourse(2).title}}
+  </div>
+  <div [ngClass]="getClassEj2(3)">
+    The therd course is {{model.getCourse(3).title}}
+  </div>
+</div>
+
+<br />
+<br />-----------------------------------------------------------------
+<br />
+<br />
+
+<!--Ejercicio 10.3-->
+<div class="m-2 p-2">
+  <div [ngStyle]="getStylesEj3(1)">
+    The first course is {{model.getCourse(1).title}}
+  </div>
+  <div [ngStyle]="getStylesEj3(2)">
+    The second course is {{model.getCourse(2).title}}
+  </div>
+  <div [ngStyle]="getStylesEj3(3)">
+    The therd course is {{model.getCourse(3).title}}
+  </div>
+</div>
