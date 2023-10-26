@@ -39,7 +39,10 @@
 
 </div>
 
-<br /><br />-----------------------------------------------------------------<br /><br />
+<br />
+<br />-----------------------------------------------------------------
+<br />
+<br />
 
 <div class="text-white m-2">
   <div class="p-2 bg-warning">
@@ -50,4 +53,46 @@
     The <span [ngStyle]="getStyles(2)">second product is {{model.getProduct(2).name}}</span>
   </div>
 
+</div>
+
+<br />
+<br />-----------------------------------------------------------------
+<br />
+<br />
+
+<div class="text-white m-2">
+  <div class="bg-info p-2">
+    There are {{getProductCount() }} products
+  </div>
+  <div *ngif="getProductCount() >4" class="bg-info p-2">
+    There aere more than four products im the model
+  </div>
+  <div *ngif="getProducByPosition(0).name 'Kaayak'" class="bg-info p-2">
+    There aere more than four products im the model
+  </div>
+</div>
+
+
+<br />
+<br />-----------------------------------------------------------------
+<br />
+<br />
+
+<div class="text-dark m-2">
+  <div class="bg-info text-white mb-2 p-2">
+    Model Data:{{jsonProduct ??'(None)'}}
+  </div>
+  <div class="form-group">
+    <label>Product Name</label>
+    <input class="form-control" [(ngModel)]="newProduct.name" />
+  </div>
+  <div class="form-group">
+    <label>Product category</label>
+    <input class="form-control" [(ngModel)]="newProduct.category" />
+  </div>
+  <div class="form-group">
+    <label>Product price</label>
+    <input class="form-control" [(ngModel)]="newProduct.price"/>
+  </div>
+  <button class="btn btn-primary" (click)="addProduct(newProduct)">Create</button>
 </div>
