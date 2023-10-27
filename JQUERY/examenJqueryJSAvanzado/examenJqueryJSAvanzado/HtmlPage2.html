@@ -1,0 +1,77 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet"
+          href="https://code.jquery.com/ui/1.13.2/themes/dot-luv/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+</head>
+<body>
+
+    <div>
+        
+        <div>
+            <input type="text" id="nombre" placeholder="Introduce tu nombre">
+            <input type="text" id="apellido" placeholder="Introduce tu apellido">
+            <input type="button" value="aceptar" id="aceptar"/>
+            <input type="button" value="cancelar" id="cancelar"/>
+        </div>
+        <div id="dialog">
+            <input type="text" class="form-control" id="datepicker" placeholder="Seleccionar fecha"/>
+        </div>
+    </div>
+
+</body>
+</html>
+<script>
+
+    $(function () {
+        $.datepicker.regional['es'] = {
+            closeText: 'Cerrar',
+            prevText: '<Ant',
+            nextText: 'Sig>',
+            currentText: 'Hoy',
+            monthNames: ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio', 'Julio', 'Agosto', 'Septiembre', 'Octubre', 'Noviembre', 'Diciembre'],
+            monthNamesShort: ['Ene', 'Feb', 'Mar', 'Abr', 'May', 'Jun', 'Jul', 'Ago', 'Sep', 'Oct', 'Nov', 'Dic'],
+            dayNames: ['Domingo', 'Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
+            dayNamesShort: ['Dom', 'Lun', 'Mar', 'Mié', 'Juv', 'Vie', 'Sáb'],
+            dayNamesMin: ['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sá'],
+            weekHeader: 'Sm',
+            dateFormat: 'dd/mm/yy',
+            firstDay: 1,
+            isRTL: false,
+            showMonthAfterYear: false,
+            yearSuffix: ''
+        };
+        $.datepicker.setDefaults($.datepicker.regional["es"]);
+
+
+        $("#aceptar").click(function () {
+            var nombre = $("#nombre").val();
+            var apellido = $("#apellido").val();
+            var nombreApellido = nombre + " " + apellido;
+            $("#dialog").html(nombreApellido);
+            $("#dialog").dialog("open");
+            $("#nombreCompleto").val(nombreApellido);
+            $("#datepicker").datepicker();
+            $("#boton").click(function () {
+                $("#datepicker").datepicker;
+            })
+        });
+        $("#dialog").dialog({
+            autoOpen: false,
+            modal: true,
+            buttons: {
+                "Cerrar": function () {
+                    $(this).dialog("close");
+                }
+            },
+            "fecha": function () {
+                $("#datepicker").datepicker();
+            }
+               
+        });
+    })
+</script>

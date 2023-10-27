@@ -1,0 +1,66 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+
+</body>
+</html>
+<script>
+    class Cafetera {
+        constructor() {
+            this.capacidadMaxima = 1000;
+            this.cantidadActual = 0;
+        }
+        informacionCafetera() {
+            console.log(`Cantidad actual ` + this.cantidadActual);
+        }
+
+        llenarCafetera() {
+            this.cantidadActual = this.capacidadMaxima;
+            console.log(`Cafetera llena`);
+        }
+
+        vaciarCafetera() {
+            this.cantidadActual = 0;
+            console.log(`Cafetera vacia`);
+        }
+
+        agregarCafe(cantidadCafe) {
+
+            this.cantidadActual = this.cantidadActual + cantidadCafe;
+            if (this.cantidadActual > 1000) {
+                this.cantidadActual = 1000
+                console.log("se ha desbordado! cantidad actual:1000");
+            }
+            console.log(`se ha rellenado, cantidad actual ` + this.cantidadActual);
+        }
+
+        servirTaza(cantidadCafe) {
+            if (this.cantidadActual >= cantidadCafe) {
+                this.cantidadActual = this.cantidadActual - cantidadCafe;
+                console.log(`Taza servida, cantidad actual  ` + this.cantidadActual);
+            } else {
+                var cafeRequerido = cantidadCafe - this.cantidadActual;
+                this.agregarCafe(cafeRequerido);
+                this.cantidadActual = this.cantidadActual - cantidadCafe;//siempre va a ser 0
+                console.log(`Taza servida, cantidad actual ` + this.cantidadActual);
+            }
+        }
+    }
+    var cliente = new Cafetera();
+    cliente.llenarCafetera();
+    cliente.servirTaza(400);
+    cliente.servirTaza(700);
+    cliente.agregarCafe(300);
+    cliente.informacionCafetera();
+
+    var cliente2 = new Cafetera();
+    cliente2.vaciarCafetera();
+    cliente2.agregarCafe(800);
+    cliente2.servirTaza(300);
+    cliente2.servirTaza(100);
+    cliente2.agregarCafe(200);
+</script>

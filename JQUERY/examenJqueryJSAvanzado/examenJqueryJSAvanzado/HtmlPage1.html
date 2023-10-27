@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <link rel="stylesheet"
+          href="https://code.jquery.com/ui/1.13.2/themes/dot-luv/jquery-ui.css" />
+    <script src="https://code.jquery.com/jquery-3.7.1.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <style type="text/css">
+        .verde {
+            color: green;
+        }
+
+        .azul {
+            color: blue;
+        }
+
+        .borde {
+            border: 2px solid;
+        }
+    </style>
+</head>
+<body>
+    <p>Primero</p>
+    <ul>
+        <li>Base de Datos</li>
+        <li>Lenguaje de Marcas</li>
+        <li></li>
+    </ul>
+    <p>Segundo</p>
+    <ul>
+        <li>
+            DWESE
+            <ul data-hours="10">
+                <li class="azul">Desarrollo Web en Entorno Servidor</li>
+            </ul>
+        </li>
+        <li>
+            DWECL
+            <ul data-hours="7">
+                <li class="azul">Desarrollo Web en Entorno Cliente</li>
+            </ul>
+        </li>
+        <li>
+            DAW
+            <ul data-hours="3">
+                <li class="azul">Despliegue de Aplicaciones Web</li>
+            </ul>
+        </li>
+        <li>
+            DIWEB
+            <ul data-hours="6">
+                <li class="azul">Diseño de interfaces Web</li>
+            </ul>
+        </li>
+        <li>
+            EIE
+            <ul data-hours="4">
+                <li class="azul">Entorno e iniciativa Empresarial</li>
+            </ul>
+        </li>
+    </ul>
+</body>
+</html>
+<script>
+    $(function () {
+        $("p").addClass("borde");//1
+        $("body > ul:nth-child(4) li").addClass("verde");//2
+        $("p").removeClass("borde");//3
+        //4
+        $("p:contains('Primero')").click(function () {
+            $("p").addClass("borde");
+        });
+         $("p:contains('Segundo')").click(function () {
+             $("p").removeClass("borde");
+        });
+        $("body > ul:first-child").find("li");//5
+        $("ul li:empty").text("Nodo vacío");//6
+        $("p:eq(0)").text("Modulos de primero");//7
+        $("p:eq(1)").text("Modulos de segundo");//8
+        $("ul li:empty").remove();//9
+        $("body > ul:nth-child(n+3)").find("li").click(function () {
+            var horas = $(this).data("hours");
+            $(this).append(" (" + horas + " horas)")
+        //10
+        })
+    })
+</script>
