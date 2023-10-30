@@ -1,98 +1,40 @@
-<div class="text-black m-2">
-  <div [class]="getClasses(1) ">
-    The first product is {{model.getProduct(1).name}}
-  </div>
-  <div class="p-2"
-       [class.bg-success]="model.getProduct(2).price < 50"
-       [class.bg-info]="model.getProduct(2).price >= 50">
-    The second product is {{model.getProduct(2).name}}
-  </div>
-</div>
+<!--Directivas Attribute
+Transforma el comportamiento o la apariencia del elemento-->
 
-<br />
-<br />-----------------------------------------------------------------
-<br />
-<br />
-
-<div class="text-white m-2">
-  <div class="p-2" [ngClass]="getClassMap(1)">
-    The first product is {{model.getProduct(1).name}}
+<div class="container-fluid">
+  <div class="row p-2">
+    <div class="col-6">
+      <form class="m-2" (ngSubmit)="submitForm()">
+        <div class="form-group">
+          <label>Name</label>
+          <input class="form-control" name="name" [(ngModel)]="newProduct.name" />
+        </div>
+        <div class="form-group">
+          <label>Category</label>
+          <input class="form-control" name="category" [(ngModel)]="newProduct.category" />
+        </div>
+        <div class="form-group">
+          <label>Price</label>
+          <input class="form-control" name="price" [(ngModel)]="newProduct.price" />
+        </div>
+        <button class="btn btn-primary mt-2" type="submit">Create</button>
+      </form>
+    </div>
+    <div class="col">
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr><th></th><th>Name</th><th>Category</th><th>Price</th></tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of getProducts(); let i = index" [pa-attr]="getProducts().length <6 ? 'table-success' : 'bg-warning'"
+              [pa-product]="item"(pa-category)="newProduct.category=$event">
+            <td>{{i + 1}}</td>
+            <td>{{item.name}}</td>
+            <td [pa-attr] ="item.category == 'Soccer' ? 'table-info' : null">{{item.category}}</td>
+            <td [pa-attr] ="'table-info'">{{item.price}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
-  <div class="p-2" [ngClass]="{'bg-success':model.getProduct(3).price < 50,'bg-info':model.getProduct(3).price >= 50}">
-    The second product is {{model.getProduct(2).name}}
-  </div>
-</div>
-
-<br />
-<br />-----------------------------------------------------------------
-<br />
-<br />
-
-<div class="text-white m-2">
-  <div class="p-2 bg-warning">
-    The <span [style.fontSize]="fontSizeWithUnits">first product is {{model.getProduct(1).name}}</span>
-  </div>
-
-  <div class="p-2 bg-info">
-    The <span [style.fontSize.px]="fontSizeWithOutUnits">second product is {{model.getProduct(2).name}}</span>
-  </div>
-
-</div>
-
-<br />
-<br />-----------------------------------------------------------------
-<br />
-<br />
-
-<div class="text-white m-2">
-  <div class="p-2 bg-warning">
-    The <span [ngStyle]="getStyles(1)">first product is {{model.getProduct(1).name}}</span>
-  </div>
-
-  <div class="p-2 bg-info">
-    The <span [ngStyle]="getStyles(2)">second product is {{model.getProduct(2).name}}</span>
-  </div>
-
-</div>
-
-<br />
-<br />-----------------------------------------------------------------
-<br />
-<br />
-
-<div class="text-white m-2">
-  <div class="bg-info p-2">
-    There are {{getProductCount() }} products
-  </div>
-  <div *ngif="getProductCount() >4" class="bg-info p-2">
-    There aere more than four products im the model
-  </div>
-  <div *ngif="getProducByPosition(0).name 'Kaayak'" class="bg-info p-2">
-    There aere more than four products im the model
-  </div>
-</div>
-
-
-<br />
-<br />-----------------------------------------------------------------
-<br />
-<br />
-
-<div class="text-dark m-2">
-  <div class="bg-info text-white mb-2 p-2">
-    Model Data:{{jsonProduct ??'(None)'}}
-  </div>
-  <div class="form-group">
-    <label>Product Name</label>
-    <input class="form-control" [(ngModel)]="newProduct.name" />
-  </div>
-  <div class="form-group">
-    <label>Product category</label>
-    <input class="form-control" [(ngModel)]="newProduct.category" />
-  </div>
-  <div class="form-group">
-    <label>Product price</label>
-    <input class="form-control" [(ngModel)]="newProduct.price"/>
-  </div>
-  <button class="btn btn-primary" (click)="addProduct(newProduct)">Create</button>
-</div>
+</div> 

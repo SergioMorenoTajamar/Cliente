@@ -51,7 +51,22 @@ export class CourseComponent {
   getCourseCount(): number {​
     return this.getCourses().length;​
   }​
+  get jsonCourse() {
+
+    return JSON.stringify(this.newProduct);
+
+  } 
 
   //Ejercicio 12.3
   selectedCourse: string | undefined;
+
+
+  getSelected(item: Course): boolean {
+  // Verifica si item y seatCapacity no son null ni undefined antes de acceder a ellos
+  if (item != null && item.seatCapacity != null && item.title === "Angular") {
+    return true;
+  } else {
+    return false;
+  }
+}
 }

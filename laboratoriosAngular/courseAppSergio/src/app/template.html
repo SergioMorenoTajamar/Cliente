@@ -106,7 +106,7 @@
 
 <!--Ejercicio 12.3-->
 <div class="bg-info text-white p-2">
-  Selected Product: {{selectedCourse ?? '(None)'}}
+  Selected Course: {{selectedCourse ?? '(None)'}}
 </div>
 
 <table class="table table-sm table-bordered mt-1 text-dark">
@@ -118,3 +118,29 @@
     <td>{{item.instructorName}}</td>
   </tr>
 </table>
+
+<br />
+<br />-----------------------------------------------------------------
+<br />
+<br />
+
+
+<div class="p-2">
+  <div class="bg-info text-white mb-2 p-2">Model Data : {{jsonCourse}}</div>
+  <form novalidate (ngSubmit)="addCourse(newCourse)">
+    <div class="form-group">
+      <label>Course title</label>
+      <input class="form-control"
+             title="title"
+             [(ngModel)]="newCourse.title"
+             #title="ngModel"
+             required
+             minlength="5"
+             pattern="^[A-Za-z ]+$" />
+      <ul class="text-danger list-unstyled" *ngIf=" title.dirty && title.invalid">
+        <li *ngFor="let error of getValidationMessages(title)">{{error}}</li>
+      </ul>
+    </div>
+    <button class="btn btn-primary" type="submit">Create</button>
+  </form>
+</div>
