@@ -128,19 +128,9 @@
 <div class="p-2">
   <div class="bg-info text-white mb-2 p-2">Model Data : {{jsonCourse}}</div>
   <form novalidate (ngSubmit)="addCourse(newCourse)">
-    <div class="form-group">
-      <label>Course title</label>
-      <input class="form-control"
-             title="title"
-             [(ngModel)]="newCourse.title"
-             #title="ngModel"
-             required
-             minlength="5"
-             pattern="^[A-Za-z ]+$" />
-      <ul class="text-danger list-unstyled" *ngIf=" title.dirty && title.invalid">
-        <li *ngFor="let error of getValidationMessages(title)">{{error}}</li>
-      </ul>
-    </div>
-    <button class="btn btn-primary" type="submit">Create</button>
+    <input type="text" [(ngModel)]="newCourse.title" name="title" required>
+    <input type="number" [(ngModel)]="newCourse.seatCapacity" name="seatCapacity" required>
+    <input type="text" [(ngModel)]="newCourse.instructorName" name="instructorName" required>
+    <button type="submit">Add Course</button>
   </form>
 </div>

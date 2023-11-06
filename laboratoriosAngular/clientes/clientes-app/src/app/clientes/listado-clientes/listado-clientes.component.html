@@ -1,0 +1,21 @@
+<h2>Listado de Clientes</h2>
+<div class="table-responsive">
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>Nombre</th>
+        <th>CIF</th>
+        <th>Dirección</th>
+        <th>Grupo</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let cliente of clientes">
+        <td>{{cliente.nombre}}</td>
+        <td>{{cliente.cif}}</td>
+        <td>{{cliente.direccion}}</td>
+        <td>{{cliente.grupo}}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

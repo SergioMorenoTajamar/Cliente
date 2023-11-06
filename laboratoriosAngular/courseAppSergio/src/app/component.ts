@@ -2,14 +2,20 @@ import { ApplicationRef, Component } from "@angular/core";
 import { Model } from "./repository.model";
 import { Course } from "./data.model";
 
-
 @Component({
   selector: "app",
   templateUrl: "template.html",
-
 })
 export class CourseComponent {
   model: Model = new Model();
+  newCourse: Course = new Course();
+
+   constructor(ref: ApplicationRef) {
+    this.model = new Model();
+    this.newCourse = new Course();
+    window.appRef = ref;
+    window.model = this.model;
+  }
 
 //Ejercicio 10.2
   getClassEj2(key: number): Object {
@@ -31,18 +37,14 @@ export class CourseComponent {
   }
 
  //Ejercicio 11.1
- constructor(ref: ApplicationRef) {​
-    (<any>window).appRef = ref;​
-    (<any>window).model = this.model;​
-  }​
 
-  getCourseByPosition(position: number): Course {​
-    return this.model.getCourses()[position];​
-  }
+  getCourseByPosition(position: number) {
+  return this.model.getCourses()[position];
+}
 
-  getCourse(key: number): Course |undefined {​
-    return this.model.getCourse(key);​
-  }​
+ getCourse(key: number) {
+   return this.model.getCourse(key);
+ }
 
   getCourses(): Course[] {​
     return this.model.getCourses();​
@@ -53,7 +55,7 @@ export class CourseComponent {
   }​
   get jsonCourse() {
 
-    return JSON.stringify(this.newProduct);
+    return JSON.stringify(this.newCourse);
 
   } 
 
@@ -62,11 +64,6 @@ export class CourseComponent {
 
 
   getSelected(item: Course): boolean {
-  // Verifica si item y seatCapacity no son null ni undefined antes de acceder a ellos
-  if (item != null && item.seatCapacity != null && item.title === "Angular") {
-    return true;
-  } else {
-    return false;
-  }
+  return item != null && item.seatCapacity != null && item.title === "Angular";
 }
 }
