@@ -6,6 +6,15 @@ import { StaticDataSource } from "./static.datasource";
 @Injectable()
 
 export class Model {
+  deleteCourse(key: number) {
+      throw new Error("Method not implemented.");
+  }
+  getCourses(): Course[] {
+      throw new Error("Method not implemented.");
+  }
+  getCourse(key: number): Course | undefined {
+      throw new Error("Method not implemented.");
+  }
   private courses: Course[];
   private locator = (p: Course, id: number) => p.id == id;
 
