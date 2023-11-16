@@ -1,88 +1,55 @@
-import React, { Component } from 'react';
+import React from "react";
+import { Message } from "./Message";
+import { Summary } from "./Summary";
+import ReactDOM from "react-dom";
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      userName: "Adam",
-      todoItems: [
-        { action: "Buy Flowers", done: false },
-        { action: "clean car", done: true },
-        { action: "collect tickets", done: true },
-        { action: "call susan", done: false }
-      ],
-      newItemText: ""
-    };
-  }
+let names = ["Bob", "Adam", "Rosel"]
 
-  updateNewTextValue = (event) => {
-    this.setState({ newItemText: event.target.value });
-  };
-
-  createNewTodo = () => {
-    if (!this.state.todoItems.find((item) => item.action === this.state.newItemText)) {
-      this.setState({
-        todoItems: [...this.state.todoItems, { action: this.state.newItemText, done: false }],
-        newItemText: ""
-      });
-    }
-  };
-
-  toggleTodo = (todo) =>
-    this.setState({
-      todoItems: this.state.todoItems.map((item) =>
-        item.action === todo.action ? { ...item, done: !item.done } : item
-      )
-    });
-
-  todoTableRows = () =>
-    this.state.todoItems.map((item) => (
-      <tr key={item.action}>
-        <td>{item.action}</td>
-        <td>
-          <input type="checkbox" checked={item.done} onChange={() => this.toggleTodo(item)} />
-        </td>
-      </tr>
-    ));
-
-  changeStateData = () => {
-    this.setState({ userName: this.state.userName === "Bob" ? "Adam" : "Bob" });
-  };
-
-  render() {
-    return (
-      <div>
-        <h4 className="bg-primary text-white text-center p-2">
-          {this.state.userName} To Do List ({this.state.todoItems.filter((t) => !t.done).length} items
-          to do)
-        </h4>
-        <div className="container-fluid">
-          <div className="my-1">
-            <input
-              className="form-control"
-              onChange={this.updateNewTextValue}
-              value={this.state.newItemText}
-            />
-            <button className="btn btn-primary mt-1" onClick={this.createNewTodo}>
-              Add
-            </button>
-          </div>
-        </div>
-
-        <button className="btn btn-primary m-2" onClick={this.changeStateData}>
-          Change
-        </button>
-
-        <table>
-          <thead>
-            <tr>
-              <td>Descripcion</td>
-              <td>Done</td>
-            </tr>
-          </thead>
-          <tbody>{this.todoTableRows()}</tbody>
-        </table>
-      </div>
-    );
-  }
+function reverseNames() {
+    names.reverse();
+    const container = document.getElementById('root');
+    ReactDOM.hydrate(<App />, container);
+    //ReactDOM.render(<App />, document.getElementById('root'));
 }
+
+function promoteName(name) {
+    names = [name, ...names.filter(val => val != name)];
+    const container = document.getElementById('root');
+    ReactDOM.hydrate(<App />, container);
+}
+
+export default function App() {
+    return (
+        <table className="table table-sm table-striped">
+            <thead>
+                <tr><th></th><th>Name</th><th>Letters</th></tr>
+            </thead>
+            <tbody>
+                {names.map((name, index) => 
+                    <tr key={name}>
+                        <Summary index={index} name={name}
+                            reverseCallback={reverseNames} promoteCallback={promoteName} />
+                    </tr>
+                    )}
+            </tbody>
+        </table>
+        )
+}
+//El componente Summary recibirá un objeto prop con 3 propiedades:
+//index: indice del objeto procesado en el map
+//name: valor actual del array
+//reverseCallback: funcion prop que revierte el orden del array
+
+
+
+
+//Componentes: sin estado, con estado
+//Props: (Propiedades): permiten al componente padre proporcionar datos a sus componentes hijo
+//Combinar jScript con las props para renderizar contenido
+//Key: permite especificar una clave para identificar el elemento de la colección
+//Functions props: notifican al componente padre que ha sucedido y este responde cambiando el valor 
+//de las data props y actualiza el contenido al usuario
+//data props : padre --> hijo
+//function props: hijo --> padre
+
+//Transferir todas las props a los componentes hijos {...props}

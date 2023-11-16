@@ -32,7 +32,7 @@ export class FormComponent {
   }
   submitForm(form: NgForm) {
     if (form.valid) {
-      this.model.saveProduct(this.course);
+      this.model.saveCourse(this.course);
       this.course = new Course();
       form.resetForm();
     }
