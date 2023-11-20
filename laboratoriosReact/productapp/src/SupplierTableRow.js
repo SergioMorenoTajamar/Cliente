@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
 export class SupplierTableRow extends Component {
-
     render() {
         let s = this.props.supplier;
         return <tr>

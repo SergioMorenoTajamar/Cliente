@@ -17,15 +17,14 @@ export class SupplierEditor extends Component {
     handleChange = (ev) => {
         ev.persist();
         this.setState(state =>
-            state.formData[ev.target.name] =
-            ev.target.name === "products"
-                ? ev.target.value.split(",") : ev.target.value);
+            state.formData[ev.target.name] = ev.target.name === "products" ? ev.target.value.split(", ") : ev.target.value);
     }
+
     handleClick = () => {
         this.props.saveCallback(
             {
                 ...this.state.formData,
-                products: this.state.formData.products.map(val => Number(val))
+                products: this.state.formData.products.map(val => val)
             });
     }
 
@@ -35,7 +34,8 @@ export class SupplierEditor extends Component {
                 <label>ID</label>
                 <input className="form-control" name="id"
                     disabled
-                    value={this.state.formData.id}/>
+                    value={this.state.formData.id}
+                    onChange={this.handleChange} />
             </div>
             <div className="form-group">
                 <label>Name</label>

@@ -1,7 +1,5 @@
 import React, { Component } from "react";
-
 export class ProductEditor extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -13,12 +11,10 @@ export class ProductEditor extends Component {
             }
         }
     }
-
     handleChange = (ev) => {
         ev.persist();
         this.setState(state => state.formData[ev.target.name] = ev.target.value);
     }
-
     handleClick = () => {
         this.props.saveCallback(this.state.formData);
     }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { ProductTableRow } from "./ProductTableRow";
-
 export class ProductTable extends Component {
+
 
     render() {
         return <table className="table table-sm table-striped table-bordered">
@@ -19,13 +19,10 @@ export class ProductTable extends Component {
                 </tr>
             </thead>
             <tbody>
-                {
-                    this.props.products.map(p =>
-                        <ProductTableRow product={p}
-                            key={p.id}
-                            editCallback={this.props.editCallback}
-                            deleteCallback={this.props.deleteCallback} />)
-                }
+             
+                    {this.props.products.map(p => <ProductTableRow product={p} key={p.id} editCallback={this.props.editCallback} deleteCallback={this.props.deleteCallback} />)}
+              
+
             </tbody>
         </table>
     }

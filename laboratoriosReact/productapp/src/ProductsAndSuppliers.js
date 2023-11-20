@@ -1,11 +1,9 @@
-import React,{ Component } from "react";
+import React, { Component } from "react";
 import { ProductDisplay } from "./ProductDisplay";
+import { Selector } from "./Selector";
 import { SupplierDisplay } from "./SupplierDisplay";
-import { Selector } from './Selector';
-
 
 export default class ProductsAndSuppliers extends Component {
-
     constructor(props) {
         super(props);
         this.state = {
@@ -22,12 +20,11 @@ export default class ProductsAndSuppliers extends Component {
             ],
             suppliers: [
                 { id: 1, name: "Surf Dudes", city: "San Jose", products: ["Kayak", "Lifejacket"] },
-                { id: 2, name: "Field Supplies", city: "New York", products: ["Soccer Ball"] },
-            ]
-
+                { id: 2, name: "Field Supplies", city: "New York", products: ["Soccer Ball"] },]
         }
         this.idCounter = 100;
     }
+
 
     saveData = (collection, item) => {
         if (item.id === "") {
@@ -41,10 +38,9 @@ export default class ProductsAndSuppliers extends Component {
                 state[collection].map(stored => stored.id === item.id ? item : stored))
         }
     }
-
     deleteData = (collection, item) => {
-        this.setState(state => state[collection] =
-            state[collection].filter(stored => stored.id !== item.id));
+        this.setState(state => state[collection]
+            = state[collection].filter(stored => stored.id !== item.id));
     }
 
     render() {
@@ -54,7 +50,7 @@ export default class ProductsAndSuppliers extends Component {
                     name="Products"
                     products={this.state.products}
                     saveCallback={p => this.saveData("products", p)}
-                    deleteCallback={p=> this.deleteData("products",p) }/>
+                    deleteCallback={p => this.deleteData("products", p)} />
                 <SupplierDisplay
                     name="Suppliers"
                     suppliers={this.state.suppliers}
@@ -63,4 +59,4 @@ export default class ProductsAndSuppliers extends Component {
             </Selector>
         </div>
     }
-} 
+}
