@@ -21,9 +21,8 @@ export class FormValidator extends Component {
                 state.errors.form = formErrors;
             }
         }
-        return {
-            errors: ValidateData(props.data, props.rules)
-        };
+        return state
+       
     }
 
     getMessagesForField = (field) => {
@@ -52,6 +51,7 @@ export class FormValidator extends Component {
             }
         });
     }
+
     getButtonClasses() {
         return this.state.formSubmitted && !this.formValid
             ? "btn-danger" : "btn-primary";

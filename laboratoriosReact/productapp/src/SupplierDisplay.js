@@ -28,6 +28,7 @@ const mapDispatchToProps = {
  * 3 - Conectar el componente con el almacén[store]
  * 
  */
+
 const connectFunction = connect(mapStateToProps, mapDispatchToProps);
 /**
  * 

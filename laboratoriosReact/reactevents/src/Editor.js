@@ -1,22 +1,23 @@
 import React,{ Component } from "react";
 import { FormValidator } from "./FormValidator";
 import { ValidationMessage } from "./ValidationMessage";
-import { validateForm } from "./wholeFormValidation";
-export class Editor extends Component {
+import { ValidateForm } from './WholeFormValidation';
 
+export class Editor extends Component {
     constructor(props) {
         super(props);
         this.state = {
             name: "",
             email: "",
-            emailConfirm: ""
+            emailconfirm: "",
+            order: ""
         }
         this.rules = {
             name: { required: true, minlength: 3, alpha: true },
-            email: { required: true, email: true, equals: "emailConfirm" },
-            emailConfirm: { required: true, email: true, equals: "email" },
+            email: { required: true, email: true },
+            emailconfirm: { required: true, email: true, equals: "email" },
+            order: { required: true }
         }
-
     }
 
     updateFormValue = (event) => {
@@ -27,7 +28,8 @@ export class Editor extends Component {
     render() {
         return (
             <div className="h5 bg-info text-white p-2">
-                <FormValidator data={this.state} rules={this.rules} submit={this.props.submit} validateForm={validateForm }>
+                <FormValidator data={this.state} rules={this.rules} submit={this.props.submit} validateForm={ValidateForm}>
+                    <ValidationMessage field="form" />
                     <div className="form-group">
                         <label>Name:</label>
                         <input className="form-control"
@@ -47,23 +49,22 @@ export class Editor extends Component {
                     <div className="form-group">
                         <label>Confirm Email:</label>
                         <input className="form-control"
-                            name="emailConfirm"
-                            value={this.state.emailConfirm}
+                            name="emailconfirm"
+                            value={this.state.emailconfirm}
                             onChange={this.updateFormValue} />
-                        <ValidationMessage field="emailConfirm" />
+                        <ValidationMessage field="emailconfirm" />
                     </div>
-
                     <div className="form-group">
                         <label>Order:</label>
-                        <textarea className="form-control" name="order"
+                        <input className="form-control"
+                            name="order"
                             value={this.state.order}
                             onChange={this.updateFormValue} />
                         <ValidationMessage field="order" />
                     </div>
-
                 </FormValidator>
             </div>
 
         )
     }
-}
+} 
