@@ -16,20 +16,64 @@
     <div id="app">
         <header>
             <h1 class="text-center" v-text="sitename"></h1>
+            <div class="text-center cart">
+                <span class="">
+                    Faltas: {{ faltas.length }}
+                </span>
+                <button class="btn btn-primary" v-on:click="mostrarAlumnos">Formulario/Alumnos</button>
+            </div>
         </header>
         <main>
             <div class="row alumnos">
-                <div>
-                    <figure class="text-center">
-                        <img v-bind:src="alumnos.foto" />
-                    </figure>
+                <!-- Pantalla de alumnos -->
+                <div v-if="alumnos.mostrar">
+                    <div>
+                        <figure class="text-center">
+                            <img v-bind:src="alumnos.foto" />
+                        </figure>
+                    </div>
+                    <div class="col col-expand text-center">
+                        <h1 v-text="fullName"></h1>
+                        <p v-html="alumnos.direccion"></p>
+                        <p v-if="alumnos.edad !== null">Nacido en: {{ alumnos.edad | calcNacimiento }}</p>
+                        <p v-html="alumnos.curso"></p>
+                        <div v-if="puedeFaltar">
+                            <button class="btn btn-primary" v-on:click="anadirFalta">Añadir Falta</button>
+                        </div>
+                        <div v-else>
+                            <button disabled class="btn btn-primary">Añadir Falta</button>
+                            <label class="text-danger">Hablar con el Alumno</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="col col-expand text-center">
-                    <h1 v-text="fullName"></h1>
-                    <p v-html="alumnos.direccion"></p>
-                    <p v-if="alumnos.edad !== null">Nacido en: {{ alumnos.edad | calcNacimiento }}</p>
-                    <p v-html="alumnos.curso"></p>
-                    <button class="btn btn-primary" v-on:click="anadirFalta">Añadir Falta</button>
+
+                <!-- Pantalla de formulario -->
+                <div v-else>
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-2">
+                            <strong>Nombre del alumno:</strong>
+                            <input v-model="alumnos.nombre" class="form-control" />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-6 col-md-offset-2">
+                            <strong>Motivo de la comunicación:</strong>
+                            <!-- Utiliza un dropdown para el motivo -->
+                            <select v-model="alumnos.motivoComunicacion" class="form-control">
+                                <option value="faltaInjustificada">Falta Injustificada</option>
+                                <option value="excesoFaltas">Exceso de Faltas</option>
+                                <!-- Agrega más opciones según sea necesario -->
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-9 col-md-offset-2 verify">
+                        <pre>
+                        Nombre del alumno: {{ alumnos.nombre }} 
+                        Motivo de la comunicación: {{ alumnos.motivoComunicacion }} 
+                    </pre>
+                    </div>
                 </div>
             </div>
         </main>
@@ -49,7 +93,10 @@
                     direccion: 'C/ del Estudioso Nº1',
                     edad: 20,
                     foto: "assets/images/foto.PNG",
-                    curso: 'Desarrollador Full Stack'
+                    curso: 'Desarrollador Full Stack',
+                    faltasMaximas:5,
+                    mostrar:true,
+                    motivoComunicacion: ''
                 },
                 faltas: []
             },
@@ -66,11 +113,19 @@
             methods:{
                 anadirFalta: function (){
                     this.faltas.push(this.alumnos.id);
+                },
+                mostrarAlumnos: function() {
+                    console.log(this.alumnos.mostrar);
+                    this.alumnos.mostrar = !this.alumnos.mostrar;
+                    console.log(this.alumnos.mostrar);
                 }
             },
             computed: {
                 fullName() {
                      return [this.alumnos.nombre, this.alumnos.apellido].join(', ');
+                },
+                puedeFaltar() {
+                    return this.faltas.length < this.alumnos.faltasMaximas;
                 }
             }
 
