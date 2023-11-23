@@ -1,0 +1,73 @@
+
+/**
+*
+* COMPONENTES VUE
+*
+*/
+
+
+<div>
+	<ul>
+	     <li>Component Example</li>
+    </ul>
+</div>
+
+
+<my-component></my-component>
+
+
+  - Dos tipos:
+	
+	- Globales: usan en toda la aplicación
+
+	- Locales: Una única instancia en el Vue.js
+
+		> Globales:
+
+			+ Se implementan antes de la instancia Vue
+			
+			+ Para mostrar el HTML debemos crearnos una propiedad Template
+			
+			+ Se lo añadimos a la plantilla del padre
+
+		> Locales:
+
+			+ Restringue el ámbito a sólo una única instacia de Vue
+			
+			+ Se forma con {Key-Value}, {key} es siempre el nombre del componente
+			  al que referenciamos luego en el componente padre y [value] es la
+			  definición del componente
+			
+			+ El componete se define como un {const}
+
+			+ Parent -> Child: Los datos se pasan hacia abajo mediante {props}
+			
+
+			+ props['comment','comment2'...n]
+
+				+ diferentes tipos de props:
+
+					> Props literales: texto estatico plano que le pasamos al componente
+					> Props dinamicos: texto dinamico que le pasamos desde el parent cambian su valor
+			
+			+ Pantillas: 
+				+ Diferentes formas: 
+
+					> Inline template string:
+							+ Información de la {template} dentro del componente cuando lo añadimos al 
+							+ Le dice a {vue} que renderice el contenido entre la apertura y el cierre de la 
+							+ <my-component:myinfo="message" inline-tempalte/> 
+			
+			+ Custom Events:
+					
+					> Interface de eventos que {Vue} permite:
+						+ $on: escucha eventos
+						+ $emit: emite/dispara eventos
+						+ $once: escucha un evento una única vez
+						+ $off: deja de escuchar un evento
+					
+					> $on(enventName): 
+						 + Parent -> Child: usar {v-on}
+						 + Child -> Parent: usar {$on(enventName)}
+
+					> $emit(enventName): no usar entre parent-child, para eso usar {v-on}

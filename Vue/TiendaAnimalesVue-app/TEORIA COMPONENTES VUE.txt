@@ -1,0 +1,32 @@
+
+/**
+*
+* COMPONENTES VUE
+*
+*/
+
+
+<div>
+	<ul>
+	     <li>Component Example</li>
+    </ul>
+</div>
+
+
+<my-component></my-component>
+
+
+  - Dos tipos:
+	- Globales: usan en toda la aplicación
+	- Locales: Una única instancia en el Vue.js
+
+		> Globales:
+
+			+ Se implementan antes de la instancia Vue
+			+ Para mostrar el HTML debemos crearnos una propiedad Template
+			+ Se lo añadimos a la plantilla del padre
+
+		> Locales:
+
+			+ 
+

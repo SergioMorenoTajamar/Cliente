@@ -1,9 +1,8 @@
 ﻿<!DOCTYPE html>
 <html>
+
 <head>
-
     <meta charset="utf-8" />
-
     <title></title>
     <script src="Scripts/vue.js"></script>
     <link href="assets/css/app.css" rel="stylesheet" />
@@ -11,8 +10,8 @@
           href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
-
 </head>
+
 <body>
     <div id="app">
         <header>
@@ -22,55 +21,61 @@
             <div class="row alumnos">
                 <div>
                     <figure class="text-center">
-                        <img v-bind:src="alumnos.foto"/>
+                        <img v-bind:src="alumnos.foto" />
                     </figure>
                 </div>
-                <div class="col col-expand p-5 text-center">
-                    <h1 v-text="alumnos.nombre"></h1>
-                    <h1 v-text="alumnos.apellido"></h1>
+                <div class="col col-expand text-center">
+                    <h1 v-text="fullName"></h1>
                     <p v-html="alumnos.direccion"></p>
-                    <p v-if="alumnos.edad !== null">El año de nacimiento es: {{ alumnos.edad | calcAnoNacimiento }}</p>
+                    <p v-if="alumnos.edad !== null">Nacido en: {{ alumnos.edad | calcNacimiento }}</p>
                     <p v-html="alumnos.curso"></p>
+                    <button class="btn btn-primary" v-on:click="anadirFalta">Añadir Falta</button>
                 </div>
             </div>
         </main>
-
     </div>
-</body>
-</html>
-<script>
-    var APP_LOG_LIFECYCLE_EVENTS = true;
+    <script>
+        var APP_LOG_LIFECYCLE_EVENTS = true;
 
-    // constructor de vue
-    var webstore = new Vue({
-        el: '#app', // elemento con el que va a trabajar
-        data: {
-            sitename: "Escuela de Negocios",
-            message: 'Aplicación Vue!',
-            alumnos: {
-                id: 1001,
-                nombre: "Juan Carlos",
-                apellido: "Linaje",
-                direccion: 'C/ Antonio de Leyva 45',
-                edad: 42,
-                foto: "assets/images/alumno.png",
-                curso: 'MASTER FULL STACK 2023'
-            }
-
-        },
-        // recibe un entero y lo formatea a un precio
-        filters: {
-            calcAnoNacimiento: function (edad) {
-                if (edad !== null && edad !== '') {
-                    const añoActual = new Date().getFullYear();
-                    return añoActual - parseInt(edad);
-                } else {
-                    return null;
+        var webstore = new Vue({
+            el: '#app',
+            data: {
+                sitename: "Escuela de Negocios",
+                message: 'Aplicación Vue!',
+                alumnos: {
+                    id: 1001,
+                    nombre: "Sergio ",
+                    apellido: "Moreno",
+                    direccion: 'C/ del Estudioso Nº1',
+                    edad: 20,
+                    foto: "assets/images/foto.PNG",
+                    curso: 'Desarrollador Full Stack'
+                },
+                faltas: []
+            },
+            filters: {
+                calcNacimiento: function (edad) {
+                    if (edad !== null && edad !== '') {
+                        const Actual = new Date().getFullYear();
+                        return Actual - parseInt(edad);
+                    } else {
+                        return null;
+                    }
+                }
+            },
+            methods:{
+                anadirFalta: function (){
+                    this.faltas.push(this.alumnos.id);
+                }
+            },
+            computed: {
+                fullName() {
+                     return [this.alumnos.nombre, this.alumnos.apellido].join(', ');
                 }
             }
-        }
-            
-        })
 
+        });
+    </script>
+</body>
 
-</script>
+</html>

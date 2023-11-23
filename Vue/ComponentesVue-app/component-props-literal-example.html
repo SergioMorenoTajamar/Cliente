@@ -1,0 +1,31 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/vue.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="assets/css/app.css" />
+</head>
+<body>
+    <div id="app">
+        <my-component text="Usuario1"></my-component>
+
+    </div>
+</body>
+</html>
+<script>
+    const MyComponent = {
+        template: '<div>Hello {{text}}</div>',
+        props: ['text']
+    }
+    new Vue({
+        el: "#app",
+        components: { 'my-component': MyComponent },
+        data: {
+            message: 'Hello from Local Components'
+        }
+    })
+
+</script>

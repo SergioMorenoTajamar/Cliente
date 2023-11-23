@@ -1,0 +1,49 @@
+Ecosistema de Vue:
+
+	- Vue:
+		Nucleo del framework gestionar las funciones principales
+
+	- Vue Cli:
+		Asistente para crear y poder administrar proyectos de Vue desde una terminal
+
+	- Vue Router:
+		Gestionar rutas URL desde el navegador de la aplicación Vue 
+
+	- Vuex:
+		Gestionar estados para aplicaciones SPA. Un almacen centralizado para todos los componentes de la aplicación Vue 
+
+	- Vue Test Utils:
+		Para test de pruebas unitarias
+
+	- Vuetify: 
+		Biblioteca destinada a la creación de atractivas interfaces de usuario
+
+
+Filtros Output:
+
+	> {{propiedas|pipe}}: 
+		Son funciones que reciben un valor, realizan una tarea de formateo y devuelven el valor formateado
+    
+	> v-on:(sintaxis) -> v:oneventname="some_javascript":
+		- Usando una funcion manejadora: v-on:click="clickhandler"
+		- Usar js inline: v-on:keyup="numeroDeCaracteres +=1"
+
+    > Computed properties:
+		Proporciona información basándose en el state de la aplicación.
+
+		- Computed:{
+			 fullName: function(){
+			    return [this.firstName,this.secondName].join(' ');
+			 }
+			 }}
+
+
+   >  v-model: -> v:bind
+   >  v-bind: 
+		Usarse blindeado atribuitos HTML como <img> blindeamos el atributo src
+   >  modifiers: 
+		Sirven para casteos de valores blindeados. Se usan junto a la directiva v-model
+   > .number modiffier:
+		Castea el valor a number
+   > .trim modiffier:
+		Elimina los espacios en blanco al inicio y al final de la cadena
