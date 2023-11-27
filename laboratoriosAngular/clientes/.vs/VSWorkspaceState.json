@@ -1,6 +1,11 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\clientes-app",
+    "\\clientes-app\\src",
+    "\\clientes-app\\src\\app",
+    "\\clientes-app\\src\\app\\clientes",
+    "\\clientes-app\\src\\assets"
   ],
   "PreviewInSolutionExplorer": false
 }
