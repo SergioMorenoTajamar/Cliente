@@ -1,9 +1,10 @@
 {
   "ExpandedNodes": [
     "",
-    "\\laboratoriosAngular\\clientes\\clientes-app\\src\\app\\clientes",
-    "\\laboratoriosAngular\\clientes\\clientes-app\\src\\app\\clientes\\alta-cliente"
+    "\\laboratoriosReact",
+    "\\laboratoriosReact\\courseapp",
+    "\\laboratoriosReact\\courseapp\\src"
   ],
-  "SelectedNode": "\\laboratoriosAngular",
+  "SelectedNode": "\\laboratoriosReact\\courseapp\\src\\App.css",
   "PreviewInSolutionExplorer": false
 }
