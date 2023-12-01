@@ -7,14 +7,14 @@ export class Display extends Component {
 
         if (keys.length === 0) {
             
-            return <div className="bg-secondary p-2 text-white">No data</div>
+            return <div className="bg-secondary text-white">No data</div>
         } else {
 
         return (
             
             <div>
-                <h2 className="text-center text-white bg-info p-2">Course list</h2>
-                <table className="table table-striped table-bordered ">
+                <h2 className="text-center text-white bg-primary ">Course list</h2>
+                <table className="table table-striped ">
                     <thead>
                         <tr>
                             <th>ID</th>

@@ -8,10 +8,10 @@ export default class App extends Component {
         super(props);
         this.state = {
             courses: [
-                { id: 1, title: "Agile", seatCapacity: 20, instructorName: "John Jones" },
-                { id: 2, title: "C#", seatCapacity: 15, instructorName: "John Jones" },
-                { id: 3, title: "Angular", seatCapacity: 13, instructorName: "Ross Miller" },
-                { id: 4, title: "Java", seatCapacity: 10, instructorName: "Alex Walker" }
+                { id: 1, title: "Python", seatCapacity: 20, instructorName: "Javier Linan" },
+                { id: 2, title: "C#", seatCapacity: 153, instructorName: "Andrei Popa" },
+                { id: 3, title: "Angular", seatCapacity: 13, instructorName: "Samuel Pop" },
+                { id: 4, title: "Java", seatCapacity: 47, instructorName: "Eduardo Fernandez" }
             ]
         }
     }
@@ -25,7 +25,7 @@ export default class App extends Component {
         return (
             <div className="conatiner-fluid">
             <div className="row ">
-                 <div className="col-3">
+                 <div className="col-4">
                     <EditorCourse addNewCourse={this.addNewCourse} />
                 </div>
 
