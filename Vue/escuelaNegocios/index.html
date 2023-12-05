@@ -7,9 +7,10 @@
     <script src="Scripts/vue.js"></script>
     <link href="assets/css/app.css" rel="stylesheet" />
     <link rel="stylesheet"
-          href=https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
           integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
           crossorigin="anonymous">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.16.2/axios.js"></script>
 </head>
 
 <body>
@@ -17,32 +18,32 @@
         <header>
             <h1 class="text-center" v-text="sitename"></h1>
             <div class="text-center cart">
-                <span class="">
-                    Faltas: {{ faltas.length }}
-                </span>
                 <button class="btn btn-primary" v-on:click="mostrarAlumnos">Formulario/Alumnos</button>
             </div>
         </header>
         <main>
             <div class="row alumnos">
                 <!-- Pantalla de alumnos -->
-                <div v-if="alumnos.mostrar">
-                    <div>
+                <div v-if="mostrarListaAlumnos">
+                    <div v-for="alumno in alumnos" :key="alumno.id">
                         <figure class="text-center">
-                            <img v-bind:src="alumnos.foto" />
+                            <img :src="alumno.foto" />
                         </figure>
-                    </div>
-                    <div class="col col-expand text-center">
-                        <h1 v-text="fullName"></h1>
-                        <p v-html="alumnos.direccion"></p>
-                        <p v-if="alumnos.edad !== null">Nacido en: {{ alumnos.edad | calcNacimiento }}</p>
-                        <p v-html="alumnos.curso"></p>
-                        <div v-if="puedeFaltar">
-                            <button class="btn btn-primary" v-on:click="anadirFalta">Añadir Falta</button>
-                        </div>
-                        <div v-else>
-                            <button disabled class="btn btn-primary">Añadir Falta</button>
-                            <label class="text-danger">Hablar con el Alumno</label>
+                        <div class="col col-expand text-center">
+                            <h1>{{ alumno.nombre }} {{ alumno.apellido }}</h1>
+                            <p>{{ alumno.direccion }}</p>
+                            <p v-if="alumno.edad !== null">Nacido en: {{ alumno.edad | calcNacimiento }}</p>
+                            <p>{{ alumno.curso }}</p>
+                            <span class="">
+                                Faltas: {{ alumno.faltas }}
+                            </span>
+                            <div v-if="puedeFaltar(alumno)">
+                                <button class="btn btn-primary" @click="anadirFalta(alumno)">Añadir Falta</button>
+                            </div>
+                            <div v-else>
+                                <button disabled class="btn btn-primary">Añadir Falta</button>
+                                <label class="text-danger">Hablar con el Alumno</label>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -68,9 +69,9 @@
 
                     <div class="col-md-9 col-md-offset-2 verify">
                         <pre>
-                        Nombre del alumno: {{ alumnos.nombre }} 
-                        Motivo de la comunicación: {{ alumnos.motivoComunicacion }} 
-                    </pre>
+                            Nombre del alumno: {{ alumnos.nombre }} 
+                            Motivo de la comunicación: {{ alumnos.motivoComunicacion }} 
+                        </pre>
                     </div>
                 </div>
             </div>
@@ -84,19 +85,8 @@
             data: {
                 sitename: "Escuela de Negocios",
                 message: 'Aplicación Vue!',
-                alumnos: {
-                    id: 1001,
-                    nombre: "Sergio ",
-                    apellido: "Moreno",
-                    direccion: 'C/ del Estudioso Nº1',
-                    edad: 20,
-                    foto: "assets/images/foto.PNG",
-                    curso: 'Desarrollador Full Stack',
-                    faltasMaximas:5,
-                    mostrar:true,
-                    motivoComunicacion: ''
-                },
-                faltas: []
+                alumnos: [],
+                mostrarListaAlumnos: true
             },
             filters: {
                 calcNacimiento: function (edad) {
@@ -108,23 +98,33 @@
                     }
                 }
             },
-            methods:{
-                anadirFalta: function (){
-                    this.faltas.push(this.alumnos.id);
+            methods: {
+                anadirFalta: function (alumno) {
+                    alumno.faltas = alumno.faltas + 1;
                 },
-                mostrarAlumnos: function() {
-                    console.log(this.alumnos.mostrar);
-                    this.alumnos.mostrar = !this.alumnos.mostrar;
-                    console.log(this.alumnos.mostrar);
+                mostrarAlumnos: function () {
+                    this.mostrarListaAlumnos = !this.mostrarListaAlumnos;
+                },
+                puedeFaltar: function(alumno) {
+                    let pudeFaltar = false;
+                    if (alumno.faltas < alumno.faltasMaximas) {
+                        pudeFaltar = true;
+                    }
+                    return pudeFaltar;
                 }
             },
             computed: {
                 fullName() {
-                     return [this.alumnos.nombre, this.alumnos.apellido].join(', ');
-                },
-                puedeFaltar() {
-                    return this.faltas.length < this.alumnos.faltasMaximas;
+                    return [this.alumnos.nombre, this.alumnos.apellido].join(', ');
                 }
+            },
+            created: function () {
+                console.log("Pito")
+                axios.get('./alumnos.json')
+                    .then((response) => {
+                        this.alumnos = response.data.alumnos;
+                        console.log(this.alumnos);
+                    });
             }
 
         });

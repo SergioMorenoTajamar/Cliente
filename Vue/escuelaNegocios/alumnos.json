@@ -1,0 +1,56 @@
+{
+  "alumnos": [
+    {
+      "id": 1001,
+      "nombre": "Sergio",
+      "apellido": "Moreno",
+      "direccion": "C/ del Estudioso",
+      "edad": 20,
+      "foto": "assets/images/foto.PNG",
+      "curso": "Desarrollador Full Stack",
+      "faltasMaximas": 5,
+      "mostrar": true,
+      "faltas": 0,
+      "motivoComunicacion": ""
+    },
+    {
+      "id": 1002,
+      "nombre": "Laura",
+      "apellido": "Gomez",
+      "direccion": "Av. de los Estudiantes",
+      "edad": 22,
+      "foto": "assets/images/foto.PNG",
+      "curso": "Diseno Grafico",
+      "faltasMaximas": 5,
+      "mostrar": true,
+      "faltas": 0,
+      "motivoComunicacion": ""
+    },
+    {
+      "id": 1003,
+      "nombre": "Carlos",
+      "apellido": "Rodriguez",
+      "direccion": "C/ del Saber",
+      "edad": 21,
+      "foto": "assets/images/foto.PNG",
+      "curso": "Ingenieria de Software",
+      "faltasMaximas": 5,
+      "mostrar": true,
+      "faltas": 0,
+      "motivoComunicacion": ""
+    },
+    {
+      "id": 1004,
+      "nombre": "Ana",
+      "apellido": "Martinez",
+      "direccion": "Plaza del Conocimiento",
+      "edad": 19,
+      "foto": "assets/images/foto.PNG",
+      "curso": "Ciencias de la Computacion",
+      "faltasMaximas": 5,
+      "mostrar": true,
+      "faltas": 0,
+      "motivoComunicacion": ""
+    }
+  ]
+}
